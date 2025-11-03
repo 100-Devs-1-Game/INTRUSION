@@ -1,0 +1,94 @@
+[gd_resource type="SpriteFrames" load_steps=22 format=3 uid="uid://dku5l4xocop33"]
+
+[ext_resource type="Texture2D" uid="uid://cn62ccu5ht3pg" path="res://seqs/room_03/room_03_minor_event_02_seq/0060.webp" id="1_kwqoh"]
+[ext_resource type="Texture2D" uid="uid://3rj7bmimaeab" path="res://seqs/room_03/room_03_minor_event_02_seq/0061.webp" id="2_yfaee"]
+[ext_resource type="Texture2D" uid="uid://dspowvh7j8ni5" path="res://seqs/room_03/room_03_minor_event_02_seq/0062.webp" id="3_ts3yk"]
+[ext_resource type="Texture2D" uid="uid://jttjskwfq24h" path="res://seqs/room_03/room_03_minor_event_02_seq/0063.webp" id="4_x8fh1"]
+[ext_resource type="Texture2D" uid="uid://md81fbbq8emc" path="res://seqs/room_03/room_03_minor_event_02_seq/0064.webp" id="5_prsdc"]
+[ext_resource type="Texture2D" uid="uid://cse6d3anj1i4r" path="res://seqs/room_03/room_03_minor_event_02_seq/0065.webp" id="6_km4cp"]
+[ext_resource type="Texture2D" uid="uid://c50w00efxwg6y" path="res://seqs/room_03/room_03_minor_event_02_seq/0066.webp" id="7_ae83r"]
+[ext_resource type="Texture2D" uid="uid://qqectlfmm4q1" path="res://seqs/room_03/room_03_minor_event_02_seq/0067.webp" id="8_a473x"]
+[ext_resource type="Texture2D" uid="uid://bgt1wtit80aii" path="res://seqs/room_03/room_03_minor_event_02_seq/0068.webp" id="9_aa4ye"]
+[ext_resource type="Texture2D" uid="uid://bhpd1qijsytd8" path="res://seqs/room_03/room_03_minor_event_02_seq/0069.webp" id="10_7clvy"]
+[ext_resource type="Texture2D" uid="uid://cbnm0vfpntc6y" path="res://seqs/room_03/room_03_minor_event_02_seq/0070.webp" id="11_ii5rj"]
+[ext_resource type="Texture2D" uid="uid://bpdu2rtug3nhe" path="res://seqs/room_03/room_03_minor_event_02_seq/0071.webp" id="12_j45ls"]
+[ext_resource type="Texture2D" uid="uid://duxtg6y6eh4px" path="res://seqs/room_03/room_03_minor_event_02_seq/0072.webp" id="13_4axam"]
+[ext_resource type="Texture2D" uid="uid://b521j6c7wbstf" path="res://seqs/room_03/room_03_minor_event_02_seq/0073.webp" id="14_p732i"]
+[ext_resource type="Texture2D" uid="uid://cusjkfjo2wa3o" path="res://seqs/room_03/room_03_minor_event_02_seq/0074.webp" id="15_1iqbg"]
+[ext_resource type="Texture2D" uid="uid://dccdht1hk3v1c" path="res://seqs/room_03/room_03_minor_event_02_seq/0075.webp" id="16_lt6h5"]
+[ext_resource type="Texture2D" uid="uid://tbu06dmtwifj" path="res://seqs/room_03/room_03_minor_event_02_seq/0076.webp" id="17_m6k4c"]
+[ext_resource type="Texture2D" uid="uid://cdya0bp163460" path="res://seqs/room_03/room_03_minor_event_02_seq/0077.webp" id="18_x78dq"]
+[ext_resource type="Texture2D" uid="uid://k0054hjr2f0f" path="res://seqs/room_03/room_03_minor_event_02_seq/0078.webp" id="19_emk2c"]
+[ext_resource type="Texture2D" uid="uid://byyghcm36jm7o" path="res://seqs/room_03/room_03_minor_event_02_seq/0079.webp" id="20_woqm4"]
+[ext_resource type="Texture2D" uid="uid://cfs8jvrqdems5" path="res://seqs/room_03/room_03_minor_event_02_seq/0080.webp" id="21_dwswh"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kwqoh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_yfaee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ts3yk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_x8fh1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_prsdc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_km4cp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ae83r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_a473x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_aa4ye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7clvy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ii5rj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_j45ls")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_4axam")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_p732i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_1iqbg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_lt6h5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_m6k4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_x78dq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_emk2c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_woqm4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_dwswh")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]
