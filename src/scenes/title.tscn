@@ -1,51 +1,2043 @@
-[gd_scene format=3 uid="uid://c04t0grmy0wqn"]
+[gd_scene load_steps=64 format=3 uid="uid://c04t0grmy0wqn"]
 
-[node name="Title" type="Control"]
+[ext_resource type="Texture2D" uid="uid://cql0mvms6kb6k" path="res://assets/menus/main_menu_screen.webp" id="1_4ignj"]
+[ext_resource type="Script" uid="uid://y05giogjngea" path="res://scenes/title.gd" id="1_pyl7j"]
+[ext_resource type="Texture2D" uid="uid://42put3q5x670" path="res://assets/menus/logo.png" id="2_wosw1"]
+[ext_resource type="FontFile" uid="uid://cgignmw1c7ehh" path="res://fonts/Helvetica-Bold.ttf" id="3_p6dhs"]
+[ext_resource type="Shader" uid="uid://c23wvrdsxvvm" path="res://scenes/glitchUI.gdshader" id="5_b3w7a"]
+[ext_resource type="Texture2D" uid="uid://frio104bfn6e" path="res://assets/menus/log_screen.webp" id="6_4rr2b"]
+[ext_resource type="Script" uid="uid://blpl5u1c27o6q" path="res://scenes/logs.gd" id="6_ia1n6"]
+[ext_resource type="PackedScene" uid="uid://des2m7b07xydb" path="res://components/ui/logs/log_button.tscn" id="7_yql1r"]
+[ext_resource type="FontFile" uid="uid://c4bq2x43il65b" path="res://fonts/Helvetica.ttf" id="9_hiwto"]
+[ext_resource type="FontFile" uid="uid://b1coy664nqqup" path="res://fonts/exp fonts/the-mark-font/TheMark-m2VZV.ttf" id="9_w65of"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b3w7a"]
+shader = ExtResource("5_b3w7a")
+shader_parameter/glitch_amount = 0.029
+shader_parameter/rgb_amount = 0.849
+shader_parameter/speed = 8.0
+shader_parameter/scanline_strength = 0.0
+shader_parameter/rgb_offset_px = 1.736
+shader_parameter/block_chance = 0.95
+shader_parameter/block_max_frac = 0.4
+shader_parameter/noise_strength = 0.0
+shader_parameter/flash_amount = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4rr2b"]
+shader = ExtResource("5_b3w7a")
+shader_parameter/glitch_amount = 1.236
+shader_parameter/rgb_amount = 1.0
+shader_parameter/speed = 8.0
+shader_parameter/scanline_strength = 0.0
+shader_parameter/rgb_offset_px = 12.0
+shader_parameter/block_chance = 1.0
+shader_parameter/block_max_frac = 0.4
+shader_parameter/noise_strength = 0.0
+shader_parameter/flash_amount = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ia1n6"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Theme" id="Theme_hiwto"]
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_ia1n6")
+VScrollBar/styles/grabber_highlight = null
+VScrollBar/styles/grabber_pressed = null
+VScrollBar/styles/scroll = null
+VScrollBar/styles/scroll_focus = null
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w65of"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4rr2b"]
+
+[sub_resource type="Gradient" id="Gradient_ygloa"]
+interpolation_mode = 1
+interpolation_color_space = 1
+offsets = PackedFloat32Array(0, 0.004)
+colors = PackedColorArray(0, 0, 0, 1, 0.968627, 0.054902, 0.313726, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6civk"]
+gradient = SubResource("Gradient_ygloa")
+width = 1701
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7af2g"]
+texture = SubResource("GradientTexture1D_6civk")
+expand_margin_right = 2048.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wosw1"]
+
+[sub_resource type="Gradient" id="Gradient_hiwto"]
+interpolation_mode = 1
+interpolation_color_space = 1
+offsets = PackedFloat32Array(0, 0)
+colors = PackedColorArray(0, 0, 0, 1, 0.968627, 0.054902, 0.313726, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_w65of"]
+gradient = SubResource("Gradient_hiwto")
+width = 1701
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ygloa"]
+texture = SubResource("GradientTexture1D_w65of")
+expand_margin_left = 4.0
+expand_margin_right = 2048.0
+
+[sub_resource type="Gradient" id="Gradient_pyl7j"]
+interpolation_mode = 1
+interpolation_color_space = 1
+offsets = PackedFloat32Array(0, 0.015)
+colors = PackedColorArray(0, 0, 0, 1, 0.968627, 0.054902, 0.313726, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_b3w7a"]
+gradient = SubResource("Gradient_pyl7j")
+width = 1701
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4rr2b"]
+texture = SubResource("GradientTexture1D_b3w7a")
+expand_margin_right = 2048.0
+
+[sub_resource type="Gradient" id="Gradient_p6dhs"]
+interpolation_mode = 1
+interpolation_color_space = 1
+offsets = PackedFloat32Array(0, 0.024)
+colors = PackedColorArray(0, 0, 0, 1, 0.968627, 0.054902, 0.313726, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_pyl7j"]
+gradient = SubResource("Gradient_p6dhs")
+width = 1701
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b3w7a"]
+texture = SubResource("GradientTexture1D_pyl7j")
+expand_margin_right = 2048.0
+
+[sub_resource type="Gradient" id="Gradient_ia1n6"]
+interpolation_mode = 1
+interpolation_color_space = 1
+offsets = PackedFloat32Array(0, 0.017)
+colors = PackedColorArray(0, 0, 0, 1, 0.968627, 0.054902, 0.313726, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hiwto"]
+gradient = SubResource("Gradient_ia1n6")
+width = 1701
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w65of"]
+texture = SubResource("GradientTexture1D_hiwto")
+expand_margin_right = 2048.0
+
+[sub_resource type="Gradient" id="Gradient_b3w7a"]
+interpolation_mode = 1
+interpolation_color_space = 1
+offsets = PackedFloat32Array(0, 0.026)
+colors = PackedColorArray(0, 0, 0, 1, 0.968627, 0.054902, 0.313726, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4rr2b"]
+gradient = SubResource("Gradient_b3w7a")
+width = 1701
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yql1r"]
+texture = SubResource("GradientTexture1D_4rr2b")
+expand_margin_right = 2048.0
+
+[sub_resource type="Gradient" id="Gradient_6civk"]
+interpolation_mode = 1
+interpolation_color_space = 1
+offsets = PackedFloat32Array(0, 0.0496183)
+colors = PackedColorArray(0, 0, 0, 1, 0.968627, 0.054902, 0.313726, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7af2g"]
+gradient = SubResource("Gradient_6civk")
+width = 1302
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_81wt4"]
+texture = SubResource("GradientTexture1D_7af2g")
+expand_margin_right = 2048.0
+
+[sub_resource type="Gradient" id="Gradient_7af2g"]
+interpolation_mode = 1
+interpolation_color_space = 1
+offsets = PackedFloat32Array(0, 0.0458015)
+colors = PackedColorArray(0, 0, 0, 1, 0.968627, 0.054902, 0.313726, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_81wt4"]
+gradient = SubResource("Gradient_7af2g")
+width = 1302
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kcc3o"]
+texture = SubResource("GradientTexture1D_81wt4")
+expand_margin_right = 2048.0
+
+[sub_resource type="Gradient" id="Gradient_w65of"]
+interpolation_mode = 1
+interpolation_color_space = 1
+offsets = PackedFloat32Array(0, 0.063)
+colors = PackedColorArray(0, 0, 0, 1, 0.968627, 0.054902, 0.313726, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ygloa"]
+gradient = SubResource("Gradient_w65of")
+width = 1701
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6civk"]
+texture = SubResource("GradientTexture1D_ygloa")
+expand_margin_right = 2048.0
+
+[sub_resource type="Gradient" id="Gradient_81wt4"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kcc3o"]
+gradient = SubResource("Gradient_81wt4")
+width = 6
+height = 20
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_6rcc6"]
+color = Color(0.964706, 0.054902, 0.313726, 1)
+thickness = 20
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_ah8jo"]
+color = Color(0.148349, 0.000553296, 0.021177, 1)
+thickness = 20
+
+[sub_resource type="Theme" id="Theme_blk4q"]
+HSlider/icons/grabber = SubResource("GradientTexture2D_kcc3o")
+HSlider/icons/grabber_highlight = SubResource("GradientTexture2D_kcc3o")
+HSlider/styles/grabber_area = SubResource("StyleBoxLine_6rcc6")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxLine_6rcc6")
+HSlider/styles/slider = SubResource("StyleBoxLine_ah8jo")
+
+[sub_resource type="Gradient" id="Gradient_kcc3o"]
+interpolation_mode = 1
+interpolation_color_space = 1
+offsets = PackedFloat32Array(0, 0.053)
+colors = PackedColorArray(0, 0, 0, 0, 0.968627, 0.054902, 0.313726, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6rcc6"]
+gradient = SubResource("Gradient_kcc3o")
+width = 1701
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ah8jo"]
+texture = SubResource("GradientTexture1D_6rcc6")
+expand_margin_right = 2048.0
+
+[sub_resource type="Animation" id="Animation_b3w7a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UICont/Quit:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UICont/Quit:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(384, 66)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UICont/Main:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("UICont/Main:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-17, 160)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("UICont/Credits:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(470, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("UICont/Credits:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("UICont/Glitch:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Logs/Logs:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Logs/Time:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Logs/LogTitle:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Logs/LogInfo:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Logs/Return:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Logs:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Glitch3:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Glitch4:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("UICont/Settings:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("UICont/Settings:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(486, 55)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Fade:modulate")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Fade/Title/Label:visible_ratio")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.84]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Fade:mouse_filter")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Fade/Title/Label:theme_override_colors/font_color")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.964706, 0.0392157, 0.313726, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4rr2b"]
+resource_name = "credits"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UICont/Main:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UICont/Main:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-17, 160), Vector2(-426, 160)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UICont/Credits:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(384, 2), Vector2(-6, 3)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("UICont/Credits:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_w65of"]
+resource_name = "load"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fade:mouse_filter")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fade/Title/Label:theme_override_colors/font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.6, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.964706, 0.0392157, 0.313726, 0), Color(0.964706, 0.0392157, 0.313726, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ygloa"]
+resource_name = "loadloop"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade/Title/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.84, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_ia1n6"]
+resource_name = "logs"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Logs/Logs:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Logs/Time:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Logs/LogTitle:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Logs/LogInfo:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Logs/Return:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("UICont/Main:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.133333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Logs:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.166667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Glitch3:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.165406, 0.166667, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Glitch4:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.133333, 0.166667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("UICont/Main:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-17, 160), Vector2(540, 160)]
+}
+
+[sub_resource type="Animation" id="Animation_pyl7j"]
+resource_name = "quit_req"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UICont/Quit:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UICont/Quit:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(384, 66), Vector2(20, 66)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UICont/Main:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("UICont/Main:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-17, 160), Vector2(-426, 160)]
+}
+
+[sub_resource type="Animation" id="Animation_hiwto"]
+resource_name = "settings"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UICont/Main:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UICont/Main:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-17, 160), Vector2(-426, 160)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UICont/Settings:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("UICont/Settings:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(506, 55), Vector2(0, 55)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b3w7a"]
+_data = {
+&"RESET": SubResource("Animation_b3w7a"),
+&"credits": SubResource("Animation_4rr2b"),
+&"load": SubResource("Animation_w65of"),
+&"loadloop": SubResource("Animation_ygloa"),
+&"logs": SubResource("Animation_ia1n6"),
+&"quit_req": SubResource("Animation_pyl7j"),
+&"settings": SubResource("Animation_hiwto")
+}
+
+[sub_resource type="Animation" id="Animation_7af2g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade/Title/Label2:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_6civk"]
+resource_name = "load"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade/Title/Label2:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_81wt4"]
+_data = {
+&"RESET": SubResource("Animation_7af2g"),
+&"load": SubResource("Animation_6civk")
+}
+
+[node name="Title" type="Control" node_paths=PackedStringArray("play_button", "logs_button", "settings_button", "credits_button", "quit_button", "confirm_quit", "cancel_quit", "exit_creds", "exit_logs", "exit_settings")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_pyl7j")
+play_button = NodePath("CanvasLayer/UICont/Main/VBoxContainer/Play")
+logs_button = NodePath("CanvasLayer/UICont/Main/VBoxContainer/Logs")
+settings_button = NodePath("CanvasLayer/UICont/Main/VBoxContainer/Settings")
+credits_button = NodePath("CanvasLayer/UICont/Main/VBoxContainer/Credits")
+quit_button = NodePath("CanvasLayer/UICont/Main/VBoxContainer/Quit")
+confirm_quit = NodePath("CanvasLayer/UICont/Quit/VBoxContainer/HBoxContainer/YES")
+cancel_quit = NodePath("CanvasLayer/UICont/Quit/VBoxContainer/HBoxContainer/NO")
+exit_creds = NodePath("CanvasLayer/UICont/Credits/VBoxContainer/Return")
+exit_logs = NodePath("CanvasLayer/Logs/Return")
+exit_settings = NodePath("CanvasLayer/UICont/Settings/VBoxContainer/Return")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Fade" type="ColorRect" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+z_index = 12
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Title" type="TextureRect" parent="CanvasLayer/Fade"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -115.0
-offset_top = -146.0
-offset_right = 115.0
-offset_bottom = 146.0
+offset_left = -384.0
+offset_top = -120.0
+offset_right = 1544.0
+offset_bottom = 203.0
 grow_horizontal = 2
 grow_vertical = 2
-alignment = 1
+scale = Vector2(0.387733, 0.387733)
+texture = ExtResource("2_wosw1")
 
-[node name="Play" type="Button" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/Fade/Title"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = 16.0
+offset_right = 1.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.964706, 0.0392157, 0.313726, 0)
+theme_override_fonts/font = ExtResource("3_p6dhs")
+theme_override_font_sizes/font_size = 76
+text = "CONTROL PANEL BOOTING...."
+vertical_alignment = 3
+visible_characters = 21
+visible_ratio = 0.84
+
+[node name="Label2" type="Label" parent="CanvasLayer/Fade/Title"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = 89.6553
+offset_right = 1.0
+offset_bottom = 193.655
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_p6dhs")
+theme_override_font_sizes/font_size = 76
+text = "|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Glitch2" type="ColorRect" parent="CanvasLayer/Fade"]
+material = SubResource("ShaderMaterial_b3w7a")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Glitch" type="ColorRect" parent="CanvasLayer/Fade"]
+visible = false
+material = SubResource("ShaderMaterial_4rr2b")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -727.0
+offset_top = -4.0
+offset_right = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Timer" type="Timer" parent="CanvasLayer/Fade"]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+z_index = -2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -459.0
+offset_top = -133.0
+offset_right = 335.0
+offset_bottom = 161.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -42.0
+offset_right = -42.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4ignj")
+expand_mode = 1
+
+[node name="Logs" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(576, 324)
+script = ExtResource("6_ia1n6")
+
+[node name="LogBG" type="TextureRect" parent="CanvasLayer/Logs"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_4rr2b")
+expand_mode = 1
+
+[node name="Logs" type="ScrollContainer" parent="CanvasLayer/Logs"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 73.0
+offset_top = -204.0
+offset_right = 494.0
+offset_bottom = 227.0
+grow_vertical = 2
+theme = SubResource("Theme_hiwto")
+
+[node name="LogContainerVB" type="VBoxContainer" parent="CanvasLayer/Logs/Logs"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 41
-text = "Play"
 
-[node name="Quit" type="Button" parent="VBoxContainer"]
+[node name="LogButton" parent="CanvasLayer/Logs/Logs/LogContainerVB" instance=ExtResource("7_yql1r")]
 layout_mode = 2
-theme_override_font_sizes/font_size = 41
-text = "Quit"
+log_title = "RELOCATION"
+log_desc = "The area surrounding ground zero of the house was promptly evacuated under false premises of toxic leakings. 
 
-[node name="Label" type="Label" parent="."]
+Our experts could successfully dispose of it with a controlled remote explosion whose source was located by carefully cut gas cables to make it appear as an accident with no risky traces left behind to the eyes of the average officer.
+
+ The media reported the version the two agents placed as bystanders by the opposite side of the street told the authorities. 
+The agents tasked with the disposal were discrete and could flee the scene without being noticed so neighbors guaranteed for their innocence to the police.
+
+We secured a deal with a moving company to transport the house under false premises.
+
+ They were led to believe we requested their service for a movie set. 
+Requesting agents to play the part of the director and a couple members of the cast in standby. 
+
+We will handle the final technicalities of the moving process ourselves.
+"
+log_date = "March 15th, 20XX"
+log_locked = true
+
+[node name="LogButton2" parent="CanvasLayer/Logs/Logs/LogContainerVB" instance=ExtResource("7_yql1r")]
+layout_mode = 2
+text = "  I HATE THIS JOB FFS"
+log_title = "MUTATIONS"
+log_desc = "The specialist assigned to inspect the subject reported it doesn't appear to show signs of life. 
+
+On the other hand, the substance clinging to the body seems to be advancing the incorporation process.
+
+ Proposed observation to determine if both can be disposed of safely after taking the proper safety measures.
+"
+log_date = "March 25th, 20XX"
+
+[node name="LogButton3" parent="CanvasLayer/Logs/Logs/LogContainerVB" instance=ExtResource("7_yql1r")]
+layout_mode = 2
+text = "  PRIORITY TRANSFER MANIFEST"
+log_title = "INTERVENE AND CONCERN"
+log_desc = "Today's inspection revealed a far more disturbing truth that what we expected. 
+
+The substance was not stationary after consuming the doctor's body, but it was actually taking its time to take control of it. 
+
+A specialized intervention squad was granted special access and sent to the secured location. Casualties occurred.
+
+ Agents are being questioned on the matter.
+"
+log_date = "June 3rd, 20XX"
+log_locked = true
+
+[node name="LogButton4" parent="CanvasLayer/Logs/Logs/LogContainerVB" instance=ExtResource("7_yql1r")]
+layout_mode = 2
+text = "RESTRICTED ACCESS KEY"
+log_title = "DESTRUCTION ATTEMPTS"
+log_desc = "Several squads were sent in the attempt to suppress the entity with force or in the attempt to recover the bodies alone.
+
+ Operations failed due to the mutation of the fallen agents and the suspected contamination of a handful of them who are now under strict observation 24/7.
+
+Requesting board meeting with the superintendent to discuss our next steps. 
+"
+log_date = "August 7th, 20XX"
+log_locked = true
+
+[node name="LogButton5" parent="CanvasLayer/Logs/Logs/LogContainerVB" instance=ExtResource("7_yql1r")]
+layout_mode = 2
+text = "  DECOMMISSIONED PERSONNEL FILE"
+log_title = "ENTITY CAPABILITIES"
+log_desc = "The subject was observed to slowly move across the house to the station itself in specific spots, sometimes unable to bе located. 
+
+It is to be determined if it is hiding from the cameras by standing in dead angles or if it has mangled itself out of sight.
+
+ Requesting intervention strategy protocol revision to account for newest findings.
+"
+log_date = "May 28th, 20XX"
+log_locked = true
+
+[node name="LogButton6" parent="CanvasLayer/Logs/Logs/LogContainerVB" instance=ExtResource("7_yql1r")]
+layout_mode = 2
+text = "  AEGIS DEFENSE PROTOCOL 9-A"
+log_title = "ABOUT THE INFECTED"
+log_desc = "Attempts to slow down or halt the mutation process of the contaminated agents were unsuccessful. 
+
+With some resistance on their end and of some of the personnel in the operation, the decision was made to seal them inside the house to wait for the process to end while the surveillance team observes constantly.
+
+ Awaiting proper confirmation on the mutation process, but preliminary examination would show the contamination occurs on exposed skin coming into contact with the substance. 
+
+Requesting uniform revision to be handled by the appropriate department.
+"
+log_date = "June 27th 20XX"
+log_locked = true
+
+[node name="LogButton7" parent="CanvasLayer/Logs/Logs/LogContainerVB" instance=ExtResource("7_yql1r")]
+layout_mode = 2
+text = "  NEUROMOD SUBJECT"
+log_title = "DOCTOR VASILIEV"
+log_desc = "Doctor Alexander Vasiliev, renowned scientist who made excellent contributions in the field of medical research, was appointed as head of research for our project. 
+
+He is to be granted full access to the facility and is in charge with creating access keys for cooperators. 
+
+Prepare all the material needed for his work within tomorrow at dawn at the side entrance 5B in the underground docks. 
+
+Hе has been instructed to meet you there and arrange the equipment. 
+"
+log_date = "October 2nd, 20XX"
+log_locked = true
+
+[node name="LogButton8" parent="CanvasLayer/Logs/Logs/LogContainerVB" instance=ExtResource("7_yql1r")]
+layout_mode = 2
+text = "  EDICT 1: FINAL COMMAND"
+log_title = "EXPECTATIONS"
+log_desc = "Humanity, it's always aspired for greatness, no matter where you looked at, from the humblest farmers, tired of their daily life, to the most open minded inventors, facing the unknown and all the possibilities it holds. 
+
+Today, we have in our hands the tools to potentially grant humanity a step further into evolution...before its time. 
+
+The specimens we have acquired shed that light in many of the problems humanity face...and if they were to be fixed... 
+Needless to say, the situation would become unrecognizable. 
+
+I will report any meaningful findings as they come.
+"
+log_date = "October 4th, 20XX"
+log_locked = true
+
+[node name="LogButton9" parent="CanvasLayer/Logs/Logs/LogContainerVB" instance=ExtResource("7_yql1r")]
+layout_mode = 2
+text = "  EDICT 1: FINAL COMMAND"
+log_title = "RESEARCH FINDINGS 1"
+log_desc = "It appears these aliens didn't require eating as a means of survival, as it was proven they were in intact state yet physically missing most internal organs we would deem vital. 
+
+As a scientist foremost, it is undeniable evolution played an excellent part in all this, but it leads me to wonder... What for? 
+
+What kind of catastrophic or inhumane situation would lead the body to mutate so drastically compared to what we consider life today?
+ 
+I am certain this specie descends from us, there are several elements in common despite everything, from the general composition of the organical parts of the body, to their use; just like you can tell a mobile phone with an antennae from the 90s is meant to be the ancestor of the smart phones we got. But I digress.
+
+ What this also implies is they didn't have to fight off certain illnesses millions of us die from in this day and age. 
+
+I have yet to figure out if these bodies hold traces or possessing any special capabilities beyond this already astonishing feat, but will keep updated. 
+"
+log_date = "November 1st, 20XX"
+log_locked = true
+
+[node name="LogButton10" parent="CanvasLayer/Logs/Logs/LogContainerVB" instance=ExtResource("7_yql1r")]
+layout_mode = 2
+text = "  EDICT 1: FINAL COMMAND"
+log_title = "RESEARCH FINDINGS 2"
+log_desc = "The next most important step into the research is figure out what these bodies were capable of. 
+
+We can tell they were meant to be more resistant to harm, as we carefully exposed part of them to controlled situations in a secure environment and for the most part they remained intact. 
+
+This explains the state they were in during the retrieval, even if the whole ordeal caused the death of these individuals in the first place.
+
+ | want to find out more. 
+
+I want to peek into humanity's future. 
+"
+log_date = "December 14th, 20XX"
+log_locked = true
+
+[node name="LogButton11" parent="CanvasLayer/Logs/Logs/LogContainerVB" instance=ExtResource("7_yql1r")]
+layout_mode = 2
+text = "  EDICT 1: FINAL COMMAND"
+log_title = "INCIDENT AT THE LAB"
+log_desc = "An accident happened today as we were testing out a particular body's resistance to fire burning at elevated temperatures. 
+
+There must have been a faulty maintenance session, and the equipment we were employing exploded on us, harming 2 technicians in the process, but that's not all that happened. 
+
+I cannot believe I underestimated something so...obvious. 
+
+I have begun to develop some symptoms along with other members of the research team, which seem to require urgent hospitalization for some of us, and I fear that's gonna put the project on halt according to some rumors.
+
+ We must have inhaled something, perhaps a parasite coming from these bodies, that's making me feel shivers even as I am writing this, but we can't stop now!
+
+ Not when we are so close!
+
+ I have to push a board meeting to request new colleagues and continue on.
+"
+log_date = "January 24th, 20XX"
+log_locked = true
+
+[node name="LogButton12" parent="CanvasLayer/Logs/Logs/LogContainerVB" instance=ExtResource("7_yql1r")]
+layout_mode = 2
+text = "  EDICT 1: FINAL COMMAND"
+log_title = "AFTERMATH"
+log_desc = "Formal communication on the result of the latest board meeting. 
+
+Project Stargaze is to be suspended on immediate effect, and the research team promptly disbanded and warned of upkeeping absolute privacy policies towards the studies conducted at the facility. 
+
+All specimens are to be destroyed at a secure location and then disposed of unsuspectingly by our experts. 
+
+All the scientists confirmed to be involved in the accident have been compensated and are being taken care of in the best medical research centre of the country.
+
+ Instructions will follow. 
+"
+log_date = "January 26th, 20XX"
+
+[node name="LogButton13" parent="CanvasLayer/Logs/Logs/LogContainerVB" instance=ExtResource("7_yql1r")]
+layout_mode = 2
+text = "  EDICT 1: FINAL COMMAND"
+log_title = "THE ARREST"
+log_desc = "Internal Communication-Strictly Confidential Today, as of 5:36 AM Head of Research for Project Stargaze Doctor Vasiliev was found breaking into the vans which were assigned to the task of transporting the bodies of the specimens to steal them. 
+
+He is currently being detained in a secure location while our legal team is discussing an accusation route we can take.
+
+ The goal is to ensure he doesn't spill out any restricted information to the public and play it down as an uncooperative individual accused of a grave malpractice. 
+
+He will be publicly put on house arrest as a dangerous individual so people will not dare approach and our specialized agents can keep an eye on him at all times to ensure he doesn't leave or receive suspicious visits.
+
+ More instructions to follow.
+"
+log_date = "January 27th, 20XX"
+log_locked = true
+
+[node name="LogButton14" parent="CanvasLayer/Logs/Logs/LogContainerVB" instance=ExtResource("7_yql1r")]
+layout_mode = 2
+text = "  EDICT 1: FINAL COMMAND"
+log_title = "HOUSE ARCHITECTURE"
+log_desc = "An investigation is pending on the agents dispatched at his domicile to determine whether this occurred under their observation or the construction was completed prior to the accident. 
+
+Expert architects are examining the structure of the place and are bewildered at the way it endured the transportation process. 
+
+The architecture of the replica Doctor Vasiliev built under his own house is astounding. 
+
+To an unsuspecting eye, it would appear to be a common house. 
+
+However, every single piece of furniture of it is resistant to damage, and the walls are reinforced by a thick layer of titanium.
+
+ Naturally, the most prominent of these findings is only visible to us after transportation of the unburied location, which most likely lost most of its functionality in the process, but our engineering experts will take care of bringing it back to an operative state safely and quickly. 
+
+For now, Doctor Vasiliev remains in a sealed room we deemed best not to approach given the findings of the project he was apart of.
+"
+log_date = "March 17th, 20XX"
+log_locked = true
+
+[node name="LogButton15" parent="CanvasLayer/Logs/Logs/LogContainerVB" instance=ExtResource("7_yql1r")]
+layout_mode = 2
+text = "  EDICT 1: FINAL COMMAND"
+log_title = "HOUSE EXPERIMENTS"
+log_desc = "It was deemed of utmost importance to find out exactly what experiments were carried out in the house and determine eventual sources of risk before discussing a safe removal of the doctor's body. 
+
+Researchers have been contacted again to examine the location due to the strict knowledge of the experimentation processes they must possess having worked together.
+
+ The findings so far aren't promising, as it seems the doctor wasn't as equipped to uphold the required safety standards, most likely leading to the current situation. 
+
+Updates will be issued soon as more confirmation comes.
+"
+log_date = "March 18th, 20XX"
+log_locked = true
+
+[node name="LogButton16" parent="CanvasLayer/Logs/Logs/LogContainerVB" instance=ExtResource("7_yql1r")]
+layout_mode = 2
+text = "  EDICT 1: FINAL COMMAND"
+log_title = "KEEP QUIET"
+log_desc = "Internal Communication-Strictly Confidential Surveillance has been assigned to keep an eye on the subject which appears to be undergoing an unexplained mutation. 
+
+An unknown dark substance is crawling on its body and even seemingly radiating off of it somehow. 
+
+It was deemed unsafe to approach at the moment but constant surveillance must be ensured on the phenomenon while the next steps are put into discussion. 
+
+Report any suspicious changes by the end of every shift, and should they be alarming, reach out immediately to security personnel located in the building.
+"
+log_date = "March 19th, 20XX"
+
+[node name="LogButton17" parent="CanvasLayer/Logs/Logs/LogContainerVB" instance=ExtResource("7_yql1r")]
+layout_mode = 2
+text = "  EDICT 1: FINAL COMMAND"
+log_title = "CONCERNS 1"
+log_desc = "Concerns regarding the subject's movements.
+
+ The subject, which initially appeared stationary, has shifted from sliding across the floor hitting walls and angles to move around the house to crawling or even attempting to imitate walking the way a human being would...if it belonged to a psych ward. 
+
+It is unclear to me what it is planning or if it is trying to fool us watching the cameras into thinking it still holds some resemblance of humanity after all. 
+
+I don't understand what the point of leaving that thing \"living\" and continuing to observe it when it just gives me the chills, especially when it stares deadpan into the cameras. 
+
+Can't we just drop a bomb on it and get this over with?
+
+ What could possibly resist that?
+"
+log_date = "April 24th, 20XX"
+
+[node name="LogButton18" parent="CanvasLayer/Logs/Logs/LogContainerVB" instance=ExtResource("7_yql1r")]
+layout_mode = 2
+text = "  EDICT 1: FINAL COMMAND"
+log_title = "CONCERNS 2"
+log_desc = "Instructions were changed, and now we are supposed to provoke the entity into acting out or something. 
+
+Needless to say, I don't like this one bit. 
+
+Engaging with it and pissing it off knowing what it can do is the last thing we need. 
+
+It sometimes feels as like my mind is playing tricks on me as I continue watching that thing. 
+
+Like...it is attempting to do something...but has yet to figure out how. 
+
+I regret taking this job. I recommend replacing the monitor, it is flickering too much and sometimes the camera feed disappears and unknown noises are heard. 
+
+The audio must have issues. 
+"
+log_date = "May 18th, 20XX"
+
+[node name="LogButton19" parent="CanvasLayer/Logs/Logs/LogContainerVB" instance=ExtResource("7_yql1r")]
+layout_mode = 2
+text = "  EDICT 1: FINAL COMMAND"
+log_title = "INTRUSION"
+log_desc = "The entity is moving fast 
+
+Fast
+
+It is watching 
+
+Watching
+
+It's watching us through the very same cameras. 
+
+It found its next prey It wants to be FREE Another chance at LIFE. 
+
+SUPERIOR LIFE.
+"
+log_date = "September 21st, 20XX"
+log_locked = true
+
+[node name="LogButton20" parent="CanvasLayer/Logs/Logs/LogContainerVB" instance=ExtResource("7_yql1r")]
+layout_mode = 2
+text = "  EDICT 1: FINAL COMMAND"
+log_title = "ALERT"
+log_desc = "National Security Announcement The research centre has been shut down after the entity supposedly escaped through an employee. 
+
+The scandal was so widespread it reached across international waters and the major exponents of the current government were questioned but denied any participation in the research project nor its aftermath. 
+
+The individual, whose whereabouts are unknown, is currently marked down as highest national security threat by the Criminal Intelligence Investigators. 
+
+No currently known methods of defense against the entity are proven.
+
+ Citizens must remain in their domicile and contact authorities immediately should they spot it and refrain from approaching it.
+
+ It is highly advised to calmly evacuate the area without causing panic. 
+
+Stay tuned for more updates.
+"
+log_date = "September 30th, 20XX"
+log_locked = true
+
+[node name="LogButton21" parent="CanvasLayer/Logs/Logs/LogContainerVB" instance=ExtResource("7_yql1r")]
+layout_mode = 2
+text = "  EDICT 1: FINAL COMMAND"
+log_title = "PAYCHECK NOTICE"
+log_desc = "Congratulations! 
+
+You successfully avoided a national emergency! The entity was disposed of. 
+
+You mishandled it horribly, and was fired, but here is a fat check for your efforts! 200$
+"
+log_date = "September 22nd, 20XX"
+log_locked = true
+
+[node name="Time" type="Label" parent="CanvasLayer/Logs"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 23.0
+offset_top = 39.0
+offset_right = 231.0
+offset_bottom = 88.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_p6dhs")
+theme_override_font_sizes/font_size = 48
+text = "10:56 PM"
+vertical_alignment = 1
+
+[node name="LogsLbl" type="Label" parent="CanvasLayer/Logs"]
+layout_mode = 0
+offset_left = 901.0
+offset_top = 39.0
+offset_right = 1109.0
+offset_bottom = 88.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_p6dhs")
+theme_override_font_sizes/font_size = 48
+text = "LOGS"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LogTitle" type="Label" parent="CanvasLayer/Logs"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -166.5
-offset_top = 37.0
-offset_right = 166.5
-offset_bottom = 98.0
+offset_left = -62.0
+offset_top = 120.0
+offset_right = 346.0
+offset_bottom = 166.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0.631373, 0, 0, 1)
-theme_override_font_sizes/font_size = 44
-text = "INTEREUSHENN"
-horizontal_alignment = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 33
+text = "I HATE THIS JOB FFS"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Datelbl" type="Label" parent="CanvasLayer/Logs"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 225.0
+offset_top = 120.0
+offset_right = 535.0
+offset_bottom = 166.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 20
+text = "January 1st, 1970"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="LogInfo" type="TextEdit" parent="CanvasLayer/Logs"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 515.0
+offset_top = 174.0
+offset_right = 1110.0
+offset_bottom = 548.0
+theme_override_colors/current_line_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_p6dhs")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_w65of")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_w65of")
+text = "I AM LOGGING THIS UNDER A FABRICATED SEQUENCE BECAUSE IF COMMAND EVER CROSS-REFERENCES THE TIMESTAMPS WITH MY ASSIGNED TASKS, I AM DONE. UTTERLY DONE. I SPENT THE LAST THREE HOURS TRYING TO REWIRE THE ATMOSPHERE CONTROL UNIT IN SECOR 7-DELTA, AND IT WASN'T THE WIRING THAT WAS THE PROBLEM - IT WAS THE PROGRAMMING ITSELF.
+
+THEY DELIBERATELY IMPLEMENTED A DECAY ROUTINE INTO THE PRIMARY ENVIROMENTAL SUPPORT SYSTEMS. IT'S NOT AN ERROR. IT'S A FAILSAFE. EVERY 1000 CYCLES, THE SYSTEM THROTTLES THE OXYGEN/NITROGEN MIX BY A FRACTION OF A PERCENT, REQUIRING A MANUAL OVERRIDE AND A FULL SYSTEM DIAGNOSTIC THAT TAKES AN ENTIRE SHIFT. WHY? BECAUSE IT ENSURES THAT SOMEONE, A HUMAN BEING, ALWAYS HAS TO BE IN THE LOOP. IT PREVENTS A FULL AUTOMATION.
+
+THEY CLAIM IT'S A \"CRITICAL HUMAN OVERSIGHT REDUNDANCY,\" BUT IT'S JUST JOB CREATION. IT'S THE CORPORATION ENSURING ITS MAINTENENCE BUDGET NEVER DIPS, AND THAT WE ARE ALL TOO BUSY DEALING WITH MANUFACTURED CRISES TO LOOK UP AND SEE THE REAL PICTURE. I FOUND THE MASTER OVERRIDE STRING IN THE DEEP SUBROUTINES - IT'S HIDDEN UNDER A FALSE-POSITIVE DIAGNOSTICS TRIGGER. I HAVEN'T USED IT YET. I NEED TO COPY IT BEFORE THE NEXT FORCED MAINTENANCE CYCLE HITS AT 0300. IF I CAN PROVE THEY ARE CREATING THESE PROBLEMS TO JUSTIFY OUR EXISTENCE, THEN MAYBE THE OTHERS WILL STOP BELIEVING THE QUARTERLY PERFORMANCE REVIEWS AND START SEEING THE SABOTAGE FOR WHAT IT IS. THIS STATION IS NOT FAILING; IT IS BEING ALLOWED TO FAIL, ONE ENGINEERED MALFUNCTION AT A TIME. THE WORST PART IS THE COFFEE MACHINE IS STILL BROKEN."
+editable = false
+drag_and_drop_selection_enabled = false
+wrap_mode = 1
+
+[node name="IntLog" type="TextEdit" parent="CanvasLayer/Logs"]
+visible = false
+layout_mode = 0
+offset_left = 515.0
+offset_top = 174.0
+offset_right = 1110.0
+offset_bottom = 548.0
+theme_override_colors/current_line_color = Color(1, 0, 0, 1)
+theme_override_colors/font_readonly_color = Color(1, 0.260006, 0.200835, 1)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_w65of")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxEmpty_w65of")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_w65of")
+text = "The entity is moving fast 
+
+Fast
+
+It is watching 
+
+Watching
+
+It's watching us through the very same cameras. 
+
+It found its next prey It wants to be FREE Another chance at LIFE. 
+
+SUPERIOR LIFE.
+"
+editable = false
+drag_and_drop_selection_enabled = false
+wrap_mode = 1
+
+[node name="Return" type="Button" parent="CanvasLayer/Logs"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 966.0
+offset_top = 587.0
+offset_right = 1126.0
+offset_bottom = 626.0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_p6dhs")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4rr2b")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_4rr2b")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_4rr2b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7af2g")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4rr2b")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4rr2b")
+text = "RETURN"
+
+[node name="UICont" type="Control" parent="CanvasLayer"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -459.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Main" type="Control" parent="CanvasLayer/UICont"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -246.5
+offset_top = -164.0
+offset_right = 193.5
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0247, 0.889999)
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UICont/Main"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.0
+offset_top = -146.0
+offset_right = 115.0
+offset_bottom = 91.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Play" type="Button" parent="CanvasLayer/UICont/Main/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_p6dhs")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wosw1")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wosw1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_wosw1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ygloa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wosw1")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wosw1")
+text = "Enter Console"
+
+[node name="Settings" type="Button" parent="CanvasLayer/UICont/Main/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_p6dhs")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wosw1")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wosw1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_wosw1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4rr2b")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wosw1")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wosw1")
+text = "Settings"
+
+[node name="Logs" type="Button" parent="CanvasLayer/UICont/Main/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_p6dhs")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wosw1")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wosw1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_wosw1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_b3w7a")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wosw1")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wosw1")
+text = "Logs"
+
+[node name="Credits" type="Button" parent="CanvasLayer/UICont/Main/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_p6dhs")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wosw1")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wosw1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_wosw1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_w65of")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wosw1")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wosw1")
+text = "Credits"
+
+[node name="Quit" type="Button" parent="CanvasLayer/UICont/Main/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_p6dhs")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wosw1")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wosw1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_wosw1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_yql1r")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wosw1")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wosw1")
+text = "Exit"
+
+[node name="Title" type="TextureRect" parent="CanvasLayer/UICont/Main"]
+layout_mode = 0
+offset_left = 61.4814
+offset_top = -96.6293
+offset_right = 953.481
+offset_bottom = 131.371
+scale = Vector2(0.387733, 0.387733)
+texture = ExtResource("2_wosw1")
+
+[node name="Quit" type="Control" parent="CanvasLayer/UICont"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 154.5
+offset_top = -258.0
+offset_right = 573.5
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UICont/Quit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 83.0
+offset_bottom = -123.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 70
+alignment = 1
+
+[node name="Confirm" type="Label" parent="CanvasLayer/UICont/Quit/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_p6dhs")
+theme_override_font_sizes/font_size = 20
+text = "    ARE YOU SURE YOU WANT TO"
+vertical_alignment = 1
+
+[node name="Confirm2" type="Label" parent="CanvasLayer/UICont/Quit/VBoxContainer/Confirm"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -10.5
+offset_right = -33.0
+offset_bottom = 10.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.968627, 0.054902, 0.313726, 1)
+theme_override_fonts/font = ExtResource("3_p6dhs")
+theme_override_font_sizes/font_size = 20
+text = "QUIT?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="VBoxContainer" parent="CanvasLayer/UICont/Quit/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 49
+alignment = 1
+
+[node name="YES" type="Button" parent="CanvasLayer/UICont/Quit/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_p6dhs")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4rr2b")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_4rr2b")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_4rr2b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_81wt4")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4rr2b")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4rr2b")
+text = "Yes, I quit"
+
+[node name="NO" type="Button" parent="CanvasLayer/UICont/Quit/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_p6dhs")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4rr2b")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_4rr2b")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_4rr2b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kcc3o")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4rr2b")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4rr2b")
+text = "Nevermind"
+
+[node name="Credits" type="Control" parent="CanvasLayer/UICont"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 470.0
+offset_right = 470.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UICont/Credits"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -158.0
+offset_bottom = 158.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 43
+
+[node name="Credits" type="Label" parent="CanvasLayer/UICont/Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_p6dhs")
+theme_override_font_sizes/font_size = 57
+text = "CREDITS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UICont/Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UICont/Credits/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 23
+
+[node name="Art" type="Label" parent="CanvasLayer/UICont/Credits/VBoxContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_p6dhs")
+theme_override_font_sizes/font_size = 26
+text = "Artwork & Game Design"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name" type="Label" parent="CanvasLayer/UICont/Credits/VBoxContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.968627, 0.054902, 0.313726, 1)
+theme_override_fonts/font = ExtResource("3_p6dhs")
+theme_override_font_sizes/font_size = 26
+text = "KLIPNITY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/UICont/Credits/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 23
+
+[node name="Writing" type="Label" parent="CanvasLayer/UICont/Credits/VBoxContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_p6dhs")
+theme_override_font_sizes/font_size = 26
+text = "Game Writer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name" type="Label" parent="CanvasLayer/UICont/Credits/VBoxContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.968627, 0.054902, 0.313726, 1)
+theme_override_fonts/font = ExtResource("3_p6dhs")
+theme_override_font_sizes/font_size = 26
+text = "Laura Bonacina"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="CanvasLayer/UICont/Credits/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 23
+
+[node name="Programming" type="Label" parent="CanvasLayer/UICont/Credits/VBoxContainer/VBoxContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_p6dhs")
+theme_override_font_sizes/font_size = 26
+text = "Programming"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name" type="Label" parent="CanvasLayer/UICont/Credits/VBoxContainer/VBoxContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.968627, 0.054902, 0.313726, 1)
+theme_override_fonts/font = ExtResource("3_p6dhs")
+theme_override_font_sizes/font_size = 26
+text = "Plant"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Return" type="Button" parent="CanvasLayer/UICont/Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_p6dhs")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4rr2b")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_4rr2b")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_4rr2b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6civk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4rr2b")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4rr2b")
+text = "RETURN"
+
+[node name="Settings" type="Control" parent="CanvasLayer/UICont"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 486.0
+offset_top = 55.0
+offset_right = 486.0
+offset_bottom = -55.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UICont/Settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_right = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 21
+
+[node name="Label" type="Label" parent="CanvasLayer/UICont/Settings/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_p6dhs")
+theme_override_font_sizes/font_size = 55
+text = "SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Video" type="VBoxContainer" parent="CanvasLayer/UICont/Settings/VBoxContainer"]
+layout_mode = 2
+
+[node name="V" type="Label" parent="CanvasLayer/UICont/Settings/VBoxContainer/Video"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.964706, 0.054902, 0.313726, 1)
+theme_override_fonts/font = ExtResource("3_p6dhs")
+theme_override_font_sizes/font_size = 36
+text = "Video"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="CanvasLayer/UICont/Settings/VBoxContainer/Video"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("9_hiwto")
+theme_override_font_sizes/font_size = 29
+text = "Fullscreen"
+
+[node name="Audio" type="VBoxContainer" parent="CanvasLayer/UICont/Settings/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="A" type="Label" parent="CanvasLayer/UICont/Settings/VBoxContainer/Audio"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.964706, 0.054902, 0.313726, 1)
+theme_override_fonts/font = ExtResource("3_p6dhs")
+theme_override_font_sizes/font_size = 36
+text = "Audio"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UICont/Settings/VBoxContainer/Audio"]
+layout_mode = 2
+theme_override_constants/separation = 19
+
+[node name="Master" type="Label" parent="CanvasLayer/UICont/Settings/VBoxContainer/Audio/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_hiwto")
+theme_override_font_sizes/font_size = 24
+text = "Master Audio"
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/UICont/Settings/VBoxContainer/Audio/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme = SubResource("Theme_blk4q")
+value = 13.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/UICont/Settings/VBoxContainer/Audio"]
+layout_mode = 2
+theme_override_constants/separation = 19
+
+[node name="SFX" type="Label" parent="CanvasLayer/UICont/Settings/VBoxContainer/Audio/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_hiwto")
+theme_override_font_sizes/font_size = 24
+text = "Sound Effects"
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/UICont/Settings/VBoxContainer/Audio/VBoxContainer2"]
+layout_mode = 2
+focus_mode = 0
+theme = SubResource("Theme_blk4q")
+value = 13.0
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="CanvasLayer/UICont/Settings/VBoxContainer/Audio"]
+layout_mode = 2
+theme_override_constants/separation = 19
+
+[node name="Music" type="Label" parent="CanvasLayer/UICont/Settings/VBoxContainer/Audio/VBoxContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_hiwto")
+theme_override_font_sizes/font_size = 24
+text = "Music"
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/UICont/Settings/VBoxContainer/Audio/VBoxContainer3"]
+layout_mode = 2
+focus_mode = 0
+theme = SubResource("Theme_blk4q")
+value = 13.0
+
+[node name="Extras" type="VBoxContainer" parent="CanvasLayer/UICont/Settings/VBoxContainer"]
+layout_mode = 2
+
+[node name="E" type="Label" parent="CanvasLayer/UICont/Settings/VBoxContainer/Extras"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.964706, 0.054902, 0.313726, 1)
+theme_override_fonts/font = ExtResource("3_p6dhs")
+theme_override_font_sizes/font_size = 36
+text = "Extras"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="E2" type="Label" parent="CanvasLayer/UICont/Settings/VBoxContainer/Extras"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_hiwto")
+theme_override_font_sizes/font_size = 24
+text = "Currently Unavailable"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Return" type="Button" parent="CanvasLayer/UICont/Settings/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_p6dhs")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4rr2b")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_4rr2b")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_4rr2b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ah8jo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4rr2b")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4rr2b")
+text = "RETURN"
+
+[node name="Glitch2" type="ColorRect" parent="CanvasLayer/UICont"]
+material = SubResource("ShaderMaterial_b3w7a")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -740.0
+offset_top = -21.0
+offset_right = -3.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Glitch" type="ColorRect" parent="CanvasLayer/UICont"]
+visible = false
+material = SubResource("ShaderMaterial_4rr2b")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -727.0
+offset_top = -4.0
+offset_right = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Glitch3" type="ColorRect" parent="CanvasLayer"]
+visible = false
+z_index = 3
+material = SubResource("ShaderMaterial_4rr2b")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Glitch4" type="ColorRect" parent="CanvasLayer"]
+visible = false
+z_index = 3
+material = SubResource("ShaderMaterial_b3w7a")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="UI" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_b3w7a")
+}
+
+[node name="Secondary" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_81wt4")
+}
