@@ -16,6 +16,8 @@ extends Node2D
 
 @export var animator: AnimatedSprite2D
 
+@onready var overlay: ColorRect = $"../Overlay"
+
 var left_limit: bool = false
 var right_limit: bool = false
 var top_limit: bool = false
@@ -33,20 +35,36 @@ var static_show_time: float = 0.3
 
 var max_energy: float = 100.0
 var current_energy: float = 100.0
-var energy_regeneration: float = 0.28
-var energy_drain: float = 0.6
+var energy_regeneration: float = 0.13
+var energy_drain: float = 0.15
 var current_usage: int = 0
+
+var threat_level: float = 0.0
+var max_threat_level: float = 100.0
+var threat_reduction: float = 3.4
+
+var intensity: float = 0.0
+var glitcher: ShaderMaterial
+var cammat
 
 func _ready() -> void:
 	light_button.pressed.connect(func(): current_room.toggle_light())
 	next_button.pressed.connect(next_camera)
 	prev_button.pressed.connect(prev_camera)
 	EventBus.light_changed.connect(update_energy_use)
+	EventBus.anomaly_fixed.connect(func(): threat_level -= threat_reduction ; if threat_level < 0.0: threat_level = 0.0)
+	EventBus.threat_level_increased.connect(func(increase): threat_level += increase)
+	EventBus.energy_spent.connect(func(amount): current_energy -= amount)
+	EventBus.display_text.connect(func(obj): $CanvasLayer/ObjectDetector.text = "Object: " + obj)
 	room_cap = rooms.size() - 1
 	if camera:
 		camera_zoom = camera.zoom
 		camera_zoom_target = camera_zoom
 	update_energy_use()
+
+	glitcher = $CanvasLayer/ColorRect.material
+	cammat = overlay.material
+
 
 func _process(delta: float) -> void:
 	if not rooms or not rooms[current_camera]:
@@ -94,27 +112,47 @@ func _process(delta: float) -> void:
 	if current_energy <= 0.0:
 		EventBus.out_of_energy.emit()
 
+	if threat_level >= 70.0 and !$UI.is_playing():
+		$UI.play("default")
+
 	update_ui()
 
 	if $SideLimits/LEFT.is_on_screen():
 		left_limit = true
+		camera.global_position.x += 6.0
 	else:
 		left_limit = false
 
 	if $SideLimits/RIGHT.is_on_screen():
 		right_limit = true
+		camera.global_position.x -= 6.0
 	else:
 		right_limit = false
 
 	if $SideLimits/TOP.is_on_screen():
 		top_limit = true
+		camera.global_position.y += 6.0
 	else:
 		top_limit = false
 
 	if $SideLimits/BOTTOM.is_on_screen():
 		bottom_limit = true
+		camera.global_position.y -= 6.0
 	else:
 		bottom_limit = false
+
+	if threat_level >= 60.0:
+		intensity = (threat_level - 60.0) / (100.0 - 60.0)
+
+		#makes the glitchiness increase after passing 90% threat threshold
+		if threat_level >= 90.0:
+			intensity *= 10.0
+
+	#intensity = clamp(intensity, 0.0, 1.0)
+
+	cammat.set_shader_parameter("u_glitch_strength", intensity)
+	cammat.set_shader_parameter("u_glitch_speed", intensity)
+	glitcher.set_shader_parameter("u_master_strength", intensity)
 
 func zoom_in() -> void:
 	if not camera:
@@ -124,6 +162,7 @@ func zoom_in() -> void:
 	camera_zoom_target.y = clamp(camera_zoom_target.y, min_zoom.y, max_zoom.y)
 	is_zooming = true
 
+
 func zoom_out() -> void:
 	if not camera:
 		return
@@ -132,9 +171,11 @@ func zoom_out() -> void:
 	camera_zoom_target.y = clamp(camera_zoom_target.y, min_zoom.y, max_zoom.y)
 	is_zooming = true
 
+
 func next_camera() -> void:
 	current_camera = (current_camera + 1) % (room_cap + 1)
 	change_room(current_camera)
+
 
 func prev_camera() -> void:
 	current_camera = (current_camera - 1 + (room_cap + 1)) % (room_cap + 1)
@@ -143,7 +184,13 @@ func prev_camera() -> void:
 
 func update_ui() -> void:
 	$CanvasLayer/EnergyBar.max_value = max_energy
-	$CanvasLayer/EnergyBar.value = current_energy
+	$CanvasLayer/EnergyBar.value = lerp($CanvasLayer/EnergyBar.value, current_energy, 0.005)
+	$CanvasLayer/ThreatBar.max_value = max_threat_level
+	$CanvasLayer/ThreatBar.value = lerpf($CanvasLayer/ThreatBar.value, threat_level, 0.005)
+
+	if threat_level >= max_threat_level:
+		print("Game over")
+		EventBus.gameover.emit()
 
 func center_camera_on_view() -> void:
 	if not camera:
@@ -165,6 +212,7 @@ func change_room(num: int) -> void:
 	await get_tree().create_timer(0.2).timeout
 	animator.visible = false
 
+
 func pick_glitch() -> void:
 	var choices = ["glitch", "glitch_1", "glitch_2", "glitch_3", "glitch_4"]
 	var state = [true, false]
@@ -175,7 +223,8 @@ func pick_glitch() -> void:
 		if animator.sprite_frames.has_animation(choice):
 			animator.play("glitch_4")
 
-func update_energy_use() -> void:
+
+func update_energy_use(_room = 0, _state = false) -> void:
 	current_usage = 0
 	for i in rooms:
 		if i.has_method("get_light_state"):

@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=3 uid="uid://des2m7b07xydb"]
+
+[ext_resource type="FontFile" uid="uid://cgignmw1c7ehh" path="res://fonts/Helvetica-Bold.ttf" id="1_4wego"]
+[ext_resource type="Script" uid="uid://bbbqe0dt1hd0c" path="res://components/ui/logs/log_button.gd" id="2_kjeun"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wego"]
+bg_color = Color(0.968627, 0.054902, 0.313726, 1)
+expand_margin_left = 30.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kjeun"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_fkyi0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_styles/hover:expand_margin_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [30.0]
+}
+
+[sub_resource type="Animation" id="Animation_kjeun"]
+resource_name = "hover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_styles/hover:expand_margin_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 30.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rmead"]
+_data = {
+&"RESET": SubResource("Animation_fkyi0"),
+&"hover": SubResource("Animation_kjeun")
+}
+
+[node name="LogButton" type="Button"]
+custom_minimum_size = Vector2(404.78, 50.189)
+offset_right = 405.0
+offset_bottom = 50.189
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_4wego")
+theme_override_font_sizes/font_size = 17
+theme_override_styles/hover = SubResource("StyleBoxFlat_4wego")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kjeun")
+text = "  SYSTEM INCIDENT REPORT"
+alignment = 0
+script = ExtResource("2_kjeun")
+log_title = "<null>"
+log_desc = "<null>"
+default_y = 50.0
+hover_y = 70.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_rmead")
+}
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8lk18vg6tm4d"]
+
+[ext_resource type="Script" uid="uid://0kp2a7qkpnyp" path="res://sandbox/minor_event.gd" id="1_x2kr6"]
+
+[node name="MinorAnomaly" type="Area2D" node_paths=PackedStringArray("anim") groups=["anom_handler"]]
+script = ExtResource("1_x2kr6")
+anim = NodePath("MinorEvent")
+
+[node name="MinorEvent" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.848, 0.68)
+
+[node name="Dark" type="Sprite2D" parent="."]
+visible = false
+
+[connection signal="input_event" from="." to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_shape_entered" from="." to="." method="_on_mouse_shape_entered"]
+[connection signal="mouse_shape_exited" from="." to="." method="_on_mouse_shape_exited"]
