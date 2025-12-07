@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d2nmaktdsaaft"
+path="res://.godot/imported/05_01_major event contain.ogg-7f6439c9acc5067471d5f0c9f2595da7.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/tutorial_speech/05_01_major event contain.ogg"
+dest_files=["res://.godot/imported/05_01_major event contain.ogg-7f6439c9acc5067471d5f0c9f2595da7.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

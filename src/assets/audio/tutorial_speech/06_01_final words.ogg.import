@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://n4syhccbe63o"
+path="res://.godot/imported/06_01_final words.ogg-133b30eceb09e4f4c1d6f568bc3aef7b.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/tutorial_speech/06_01_final words.ogg"
+dest_files=["res://.godot/imported/06_01_final words.ogg-133b30eceb09e4f4c1d6f568bc3aef7b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

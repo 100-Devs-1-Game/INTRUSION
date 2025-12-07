@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://s4qurlj7ww4d"
+path="res://.godot/imported/02_01_minor event report.ogg-0517eb2991cd8f22811b3ab587db0184.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/tutorial_speech/02_01_minor event report.ogg"
+dest_files=["res://.godot/imported/02_01_minor event report.ogg-0517eb2991cd8f22811b3ab587db0184.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

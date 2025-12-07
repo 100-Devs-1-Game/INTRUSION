@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://hgk62crfdq88"
+path="res://.godot/imported/03_01_fix button.ogg-6a3d92df5b8de913692b3013b7672ffc.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/tutorial_speech/03_01_fix button.ogg"
+dest_files=["res://.godot/imported/03_01_fix button.ogg-6a3d92df5b8de913692b3013b7672ffc.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
