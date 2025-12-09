@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://c04t0grmy0wqn"]
+[gd_scene load_steps=66 format=3 uid="uid://c04t0grmy0wqn"]
 
 [ext_resource type="Texture2D" uid="uid://cql0mvms6kb6k" path="res://assets/menus/main_menu_screen.webp" id="1_4ignj"]
 [ext_resource type="Script" uid="uid://y05giogjngea" path="res://scenes/title.gd" id="1_pyl7j"]
@@ -11,6 +11,7 @@
 [ext_resource type="FontFile" uid="uid://c4bq2x43il65b" path="res://fonts/Helvetica.ttf" id="9_hiwto"]
 [ext_resource type="FontFile" uid="uid://b1coy664nqqup" path="res://fonts/exp fonts/the-mark-font/TheMark-m2VZV.ttf" id="9_w65of"]
 [ext_resource type="Script" uid="uid://6p0l8g2qfmmy" path="res://scenes/settings.gd" id="10_ygloa"]
+[ext_resource type="AudioStream" uid="uid://d2s2ghc1e2ic0" path="res://assets/audio/music/INTRUSION_theme_song_v2.ogg" id="12_6civk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b3w7a"]
 shader = ExtResource("5_b3w7a")
@@ -2047,6 +2048,10 @@ libraries = {
 libraries = {
 &"": SubResource("AnimationLibrary_81wt4")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_6civk")
+autoplay = true
 
 [connection signal="value_changed" from="CanvasLayer/UICont/Settings/VBoxContainer/Audio/VBoxContainer/HSlider" to="CanvasLayer/UICont/Settings" method="_on_master_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/UICont/Settings/VBoxContainer/Audio/VBoxContainer2/HSlider" to="CanvasLayer/UICont/Settings" method="_on_sfx_value_changed"]
