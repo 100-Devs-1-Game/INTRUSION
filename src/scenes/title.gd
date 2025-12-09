@@ -66,7 +66,8 @@ func play_game() -> void:
 	$CanvasLayer/UI.play("loadloop")
 	plh_load_bar()
 	await $CanvasLayer/Secondary.animation_finished
-	get_tree().change_scene_to_file("res://scenes/game_deprecated.tscn")
+	#get_tree().change_scene_to_file("res://scenes/game_deprecated.tscn")
+	EventBus.load_game.emit()
 
 
 func load_logs() -> void:	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://c04t0grmy0wqn"]
+[gd_scene load_steps=65 format=3 uid="uid://c04t0grmy0wqn"]
 
 [ext_resource type="Texture2D" uid="uid://cql0mvms6kb6k" path="res://assets/menus/main_menu_screen.webp" id="1_4ignj"]
 [ext_resource type="Script" uid="uid://y05giogjngea" path="res://scenes/title.gd" id="1_pyl7j"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://des2m7b07xydb" path="res://components/ui/logs/log_button.tscn" id="7_yql1r"]
 [ext_resource type="FontFile" uid="uid://c4bq2x43il65b" path="res://fonts/Helvetica.ttf" id="9_hiwto"]
 [ext_resource type="FontFile" uid="uid://b1coy664nqqup" path="res://fonts/exp fonts/the-mark-font/TheMark-m2VZV.ttf" id="9_w65of"]
+[ext_resource type="Script" uid="uid://6p0l8g2qfmmy" path="res://scenes/settings.gd" id="10_ygloa"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b3w7a"]
 shader = ExtResource("5_b3w7a")
@@ -1833,7 +1834,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_4rr2b")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_4rr2b")
 text = "RETURN"
 
-[node name="Settings" type="Control" parent="CanvasLayer/UICont"]
+[node name="Settings" type="Control" parent="CanvasLayer/UICont" node_paths=PackedStringArray("MASTERAUDIO", "SFXAUDIO", "MUSICAUDIO")]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -1845,6 +1846,10 @@ offset_right = 486.0
 offset_bottom = -55.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("10_ygloa")
+MASTERAUDIO = NodePath("VBoxContainer/Audio/VBoxContainer/HSlider")
+SFXAUDIO = NodePath("VBoxContainer/Audio/VBoxContainer2/HSlider")
+MUSICAUDIO = NodePath("VBoxContainer/Audio/VBoxContainer3/HSlider")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UICont/Settings"]
 layout_mode = 1
@@ -1949,6 +1954,7 @@ theme = SubResource("Theme_blk4q")
 value = 13.0
 
 [node name="Extras" type="VBoxContainer" parent="CanvasLayer/UICont/Settings/VBoxContainer"]
+visible = false
 layout_mode = 2
 
 [node name="E" type="Label" parent="CanvasLayer/UICont/Settings/VBoxContainer/Extras"]
@@ -2041,3 +2047,7 @@ libraries = {
 libraries = {
 &"": SubResource("AnimationLibrary_81wt4")
 }
+
+[connection signal="value_changed" from="CanvasLayer/UICont/Settings/VBoxContainer/Audio/VBoxContainer/HSlider" to="CanvasLayer/UICont/Settings" method="_on_master_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/UICont/Settings/VBoxContainer/Audio/VBoxContainer2/HSlider" to="CanvasLayer/UICont/Settings" method="_on_sfx_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/UICont/Settings/VBoxContainer/Audio/VBoxContainer3/HSlider" to="CanvasLayer/UICont/Settings" method="_on_music_value_changed"]
