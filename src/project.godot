@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Intrusion"
-run/main_scene="uid://ctajckm8sdpo1"
+run/main_scene="uid://bk4ir3a6rh5hy"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 EventBus="*res://autoloads/EventBus.gd"
+Global="*res://autoloads/global.gd"
 
 [global_group]
 
