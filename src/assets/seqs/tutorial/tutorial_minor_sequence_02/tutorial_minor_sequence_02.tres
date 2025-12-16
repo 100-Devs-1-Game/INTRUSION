@@ -1,0 +1,62 @@
+[gd_resource type="SpriteFrames" load_steps=14 format=3 uid="uid://xutyykwm70t7"]
+
+[ext_resource type="Texture2D" uid="uid://ok50yt1flj1q" path="res://seqs/tutorial/tutorial_minor_sequence_02/0013.webp" id="1_8hqqo"]
+[ext_resource type="Texture2D" uid="uid://bqjrni8fbcld2" path="res://seqs/tutorial/tutorial_minor_sequence_02/0014.webp" id="2_eafm0"]
+[ext_resource type="Texture2D" uid="uid://b07qvhkbsned2" path="res://seqs/tutorial/tutorial_minor_sequence_02/0015.webp" id="3_eriey"]
+[ext_resource type="Texture2D" uid="uid://bga7lh4y65pr0" path="res://seqs/tutorial/tutorial_minor_sequence_02/0016.webp" id="4_7gvfy"]
+[ext_resource type="Texture2D" uid="uid://b355rgejw2eke" path="res://seqs/tutorial/tutorial_minor_sequence_02/0017.webp" id="5_0r4cf"]
+[ext_resource type="Texture2D" uid="uid://ctjq260b2ymw8" path="res://seqs/tutorial/tutorial_minor_sequence_02/0018.webp" id="6_5asb2"]
+[ext_resource type="Texture2D" uid="uid://b8uhjgug0vltn" path="res://seqs/tutorial/tutorial_minor_sequence_02/0019.webp" id="7_65756"]
+[ext_resource type="Texture2D" uid="uid://of7oxq3rigqm" path="res://seqs/tutorial/tutorial_minor_sequence_02/0020.webp" id="8_qg7f5"]
+[ext_resource type="Texture2D" uid="uid://drufe311lrqjj" path="res://seqs/tutorial/tutorial_minor_sequence_02/0021.webp" id="9_sjh0r"]
+[ext_resource type="Texture2D" uid="uid://b10onpha0cx4e" path="res://seqs/tutorial/tutorial_minor_sequence_02/0022.webp" id="10_wmbc7"]
+[ext_resource type="Texture2D" uid="uid://cx0ppm4wsnpih" path="res://seqs/tutorial/tutorial_minor_sequence_02/0023.webp" id="11_gugkb"]
+[ext_resource type="Texture2D" uid="uid://dhkie8q8c7rau" path="res://seqs/tutorial/tutorial_minor_sequence_02/0024.webp" id="12_5amrf"]
+[ext_resource type="Texture2D" uid="uid://b710atmcgs2v2" path="res://seqs/tutorial/tutorial_minor_sequence_02/0025.webp" id="13_4ktcn"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8hqqo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_eafm0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_eriey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7gvfy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0r4cf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5asb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_65756")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qg7f5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_sjh0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_wmbc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_gugkb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_5amrf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_4ktcn")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]

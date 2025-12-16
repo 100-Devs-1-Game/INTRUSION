@@ -1,0 +1,162 @@
+[gd_resource type="SpriteFrames" load_steps=39 format=3 uid="uid://dwxriishg80sq"]
+
+[ext_resource type="Texture2D" uid="uid://d2jrom7ryathk" path="res://seqs/tutorial/tutorial_major_sequence_02/0013.webp" id="1_ucesk"]
+[ext_resource type="Texture2D" uid="uid://5slhhikj7q3t" path="res://seqs/tutorial/tutorial_major_sequence_02/0014.webp" id="2_3d7xf"]
+[ext_resource type="Texture2D" uid="uid://cmundcfp8hhok" path="res://seqs/tutorial/tutorial_major_sequence_02/0015.webp" id="3_4fc2i"]
+[ext_resource type="Texture2D" uid="uid://cfygq6nfr8edl" path="res://seqs/tutorial/tutorial_major_sequence_02/0016.webp" id="4_j1mja"]
+[ext_resource type="Texture2D" uid="uid://ci0wic6unls34" path="res://seqs/tutorial/tutorial_major_sequence_02/0017.webp" id="5_ob6dg"]
+[ext_resource type="Texture2D" uid="uid://ccnmajcpa1aeb" path="res://seqs/tutorial/tutorial_major_sequence_02/0018.webp" id="6_yoler"]
+[ext_resource type="Texture2D" uid="uid://cmon1hgwubg22" path="res://seqs/tutorial/tutorial_major_sequence_02/0019.webp" id="7_f80ce"]
+[ext_resource type="Texture2D" uid="uid://dle40ibpbs1pd" path="res://seqs/tutorial/tutorial_major_sequence_02/0020.webp" id="8_4lg2y"]
+[ext_resource type="Texture2D" uid="uid://3mvdgncv7e1e" path="res://seqs/tutorial/tutorial_major_sequence_02/0021.webp" id="9_bfbeh"]
+[ext_resource type="Texture2D" uid="uid://bgt2qdue7wcqg" path="res://seqs/tutorial/tutorial_major_sequence_02/0022.webp" id="10_jq6e7"]
+[ext_resource type="Texture2D" uid="uid://dj8r7k4b1tfse" path="res://seqs/tutorial/tutorial_major_sequence_02/0023.webp" id="11_rnqjf"]
+[ext_resource type="Texture2D" uid="uid://sli2k76htiby" path="res://seqs/tutorial/tutorial_major_sequence_02/0024.webp" id="12_shl7g"]
+[ext_resource type="Texture2D" uid="uid://cbnrsrtmdqjvt" path="res://seqs/tutorial/tutorial_major_sequence_02/0025.webp" id="13_lnaps"]
+[ext_resource type="Texture2D" uid="uid://dj54fllh81uhc" path="res://seqs/tutorial/tutorial_major_sequence_02/0026.webp" id="14_7j1bb"]
+[ext_resource type="Texture2D" uid="uid://c1yawfvkcmrtn" path="res://seqs/tutorial/tutorial_major_sequence_02/0027.webp" id="15_invwi"]
+[ext_resource type="Texture2D" uid="uid://bmopgxicuilrr" path="res://seqs/tutorial/tutorial_major_sequence_02/0028.webp" id="16_o1icc"]
+[ext_resource type="Texture2D" uid="uid://fosw47byboq2" path="res://seqs/tutorial/tutorial_major_sequence_02/0029.webp" id="17_ykvhg"]
+[ext_resource type="Texture2D" uid="uid://c3wpda58ejjxv" path="res://seqs/tutorial/tutorial_major_sequence_02/0030.webp" id="18_w5xkh"]
+[ext_resource type="Texture2D" uid="uid://d2v4akj88o3rv" path="res://seqs/tutorial/tutorial_major_sequence_02/0031.webp" id="19_1pgb7"]
+[ext_resource type="Texture2D" uid="uid://dhgk7pqer6l1w" path="res://seqs/tutorial/tutorial_major_sequence_02/0032.webp" id="20_8dtog"]
+[ext_resource type="Texture2D" uid="uid://dx4nwok0vgypq" path="res://seqs/tutorial/tutorial_major_sequence_02/0033.webp" id="21_ncfpj"]
+[ext_resource type="Texture2D" uid="uid://dan50ff1rntc1" path="res://seqs/tutorial/tutorial_major_sequence_02/0034.webp" id="22_p72nk"]
+[ext_resource type="Texture2D" uid="uid://cooypwcvtcft7" path="res://seqs/tutorial/tutorial_major_sequence_02/0035.webp" id="23_37lx1"]
+[ext_resource type="Texture2D" uid="uid://bhiqehyw4tv4y" path="res://seqs/tutorial/tutorial_major_sequence_02/0036.webp" id="24_5dshp"]
+[ext_resource type="Texture2D" uid="uid://v8bxd6cq85od" path="res://seqs/tutorial/tutorial_major_sequence_02/0037.webp" id="25_tn3n8"]
+[ext_resource type="Texture2D" uid="uid://bm8u7myrlgmih" path="res://seqs/tutorial/tutorial_major_sequence_02/0038.webp" id="26_d5kwf"]
+[ext_resource type="Texture2D" uid="uid://2d1v5w0k5hoq" path="res://seqs/tutorial/tutorial_major_sequence_02/0039.webp" id="27_gvjag"]
+[ext_resource type="Texture2D" uid="uid://cf24kyaj4dcld" path="res://seqs/tutorial/tutorial_major_sequence_02/0040.webp" id="28_brkuv"]
+[ext_resource type="Texture2D" uid="uid://cxwsxhrgohykb" path="res://seqs/tutorial/tutorial_major_sequence_02/0041.webp" id="29_sy1we"]
+[ext_resource type="Texture2D" uid="uid://ddwpp5dyhevxg" path="res://seqs/tutorial/tutorial_major_sequence_02/0042.webp" id="30_ne687"]
+[ext_resource type="Texture2D" uid="uid://dgxp72kqbry1y" path="res://seqs/tutorial/tutorial_major_sequence_02/0043.webp" id="31_uxeyf"]
+[ext_resource type="Texture2D" uid="uid://dnguap05w2qx7" path="res://seqs/tutorial/tutorial_major_sequence_02/0044.webp" id="32_ctgi7"]
+[ext_resource type="Texture2D" uid="uid://c6betiba6yjuc" path="res://seqs/tutorial/tutorial_major_sequence_02/0045.webp" id="33_vpxpb"]
+[ext_resource type="Texture2D" uid="uid://dgbpvutxjasmi" path="res://seqs/tutorial/tutorial_major_sequence_02/0046.webp" id="34_xcfgi"]
+[ext_resource type="Texture2D" uid="uid://cauf11pkxioka" path="res://seqs/tutorial/tutorial_major_sequence_02/0047.webp" id="35_w2qtg"]
+[ext_resource type="Texture2D" uid="uid://b0spcf6fekntx" path="res://seqs/tutorial/tutorial_major_sequence_02/0048.webp" id="36_ddonq"]
+[ext_resource type="Texture2D" uid="uid://buwn0duggtywa" path="res://seqs/tutorial/tutorial_major_sequence_02/0049.webp" id="37_eiwtq"]
+[ext_resource type="Texture2D" uid="uid://ft2i07sn07lr" path="res://seqs/tutorial/tutorial_major_sequence_02/0050.webp" id="38_8g53v"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ucesk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3d7xf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4fc2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_j1mja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ob6dg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yoler")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_f80ce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4lg2y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bfbeh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jq6e7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_rnqjf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_shl7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_lnaps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_7j1bb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_invwi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_o1icc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ykvhg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_w5xkh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_1pgb7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_8dtog")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ncfpj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_p72nk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_37lx1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_5dshp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_tn3n8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_d5kwf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_gvjag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_brkuv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_sy1we")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ne687")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_uxeyf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_ctgi7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_vpxpb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_xcfgi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_w2qtg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_ddonq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_eiwtq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_8g53v")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]

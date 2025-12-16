@@ -1,0 +1,30 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://dq3ljk3wiggb4"]
+
+[ext_resource type="Texture2D" uid="uid://bmgweyrhkoy53" path="res://seqs/tutorial/tutorial_minor_sequence_01/0001.webp" id="1_sii2a"]
+[ext_resource type="Texture2D" uid="uid://cvoi2rmf4ogaf" path="res://seqs/tutorial/tutorial_minor_sequence_01/0002.webp" id="2_2xl5q"]
+[ext_resource type="Texture2D" uid="uid://bjb8mx6lyyvdw" path="res://seqs/tutorial/tutorial_minor_sequence_01/0003.webp" id="3_j50ao"]
+[ext_resource type="Texture2D" uid="uid://b6qtdqf3p85gb" path="res://seqs/tutorial/tutorial_minor_sequence_01/0004.webp" id="4_mvg6u"]
+[ext_resource type="Texture2D" uid="uid://b0mrru51t41yc" path="res://seqs/tutorial/tutorial_minor_sequence_01/0005.webp" id="5_pgsfi"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sii2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2xl5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_j50ao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mvg6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pgsfi")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]

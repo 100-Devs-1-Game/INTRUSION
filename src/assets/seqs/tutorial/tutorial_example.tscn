@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://ci6p574d27j5b"]
+
+[ext_resource type="Texture2D" uid="uid://b4nxsvjcwv0ft" path="res://assets/seqs/tutorial/TUTORIAL_BASE_LIGHT.webp" id="1_ghkrx"]
+[ext_resource type="Texture2D" uid="uid://clupc8gt0yove" path="res://assets/seqs/tutorial/TUTORIAL_BASE_DARK.webp" id="2_c0khu"]
+[ext_resource type="SpriteFrames" uid="uid://dq3ljk3wiggb4" path="res://assets/seqs/tutorial/tutorial_minor_sequence_01/tutorial_minor_event_01_seq.tres" id="3_yakgg"]
+[ext_resource type="SpriteFrames" uid="uid://xutyykwm70t7" path="res://assets/seqs/tutorial/tutorial_minor_sequence_02/tutorial_minor_sequence_02.tres" id="4_g3t1j"]
+[ext_resource type="SpriteFrames" uid="uid://dr78lovpigtry" path="res://assets/seqs/tutorial/tutorial_major_sequence_01/tutorial_major_sequence_01.tres" id="5_8l2ib"]
+[ext_resource type="SpriteFrames" uid="uid://dwxriishg80sq" path="res://assets/seqs/tutorial/tutorial_major_sequence_02/tutorial_major_sequence_02.tres" id="6_72idq"]
+[ext_resource type="SpriteFrames" uid="uid://bt48k86j5hste" path="res://assets/seqs/tutorial/tutorial_major_sequence_03/tutorial_major_sequence_03.tres" id="7_h85mr"]
+
+[node name="Tutorial_example" type="Node2D"]
+
+[node name="TUTORIAL_BASE_LIGHT" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("1_ghkrx")
+
+[node name="TUTORIAL_BASE_DARK" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(576, 324)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("2_c0khu")
+
+[node name="Minor_Sequence_01" type="AnimatedSprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.9, 0.9)
+sprite_frames = ExtResource("3_yakgg")
+frame = 4
+frame_progress = 1.0
+
+[node name="Minor_Sequence_02" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(576, 324)
+scale = Vector2(0.9, 0.9)
+sprite_frames = ExtResource("4_g3t1j")
+
+[node name="Major_Sequence_01" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(576, 324)
+scale = Vector2(0.9, 0.9)
+sprite_frames = ExtResource("5_8l2ib")
+frame = 4
+frame_progress = 1.0
+
+[node name="Major_Sequence_02" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(576, 324)
+scale = Vector2(0.9, 0.9)
+sprite_frames = ExtResource("6_72idq")
+
+[node name="Major_Sequence_03" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(576, 324)
+scale = Vector2(0.9, 0.9)
+sprite_frames = ExtResource("7_h85mr")
+frame = 40
+frame_progress = 1.0
