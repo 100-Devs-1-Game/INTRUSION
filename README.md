@@ -4,6 +4,8 @@ INTRUSION is a Fixed-Camera Psychological Horror / Systems Management game, insp
 
 Contain the breach. Survive the shift. Never leave the chair.
 
-INTRUSION is part of the 33 games made in 100 days gamejam game hosted by CGGJ (Collaborative Godot Game Jam) https://itch.io/jam/33-games-in-100-days-collaborative-game-jam
+INTRUSION is part of the 33 games made in 100 days gamejam game hosted by CGGJ (Collaborative Godot Game Jam) 
+
+https://itch.io/jam/33-games-in-100-days-collaborative-game-jam
 
 Join us on [Discord](https://discord.gg/UHN4AjMw4d)
