@@ -21,3 +21,4 @@ signal update_log_info(title: String, desc: String, date: String)
 
 signal load_game
 signal load_menu
+signal fade_screen

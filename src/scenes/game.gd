@@ -101,3 +101,9 @@ func _on_timer_timeout() -> void:
 
 func _game_over() -> void:
 	pass
+
+
+func _on_x_pressed() -> void:
+	EventBus.fade_screen.emit()
+	EventBus.load_menu.emit()
+	pass # Replace with function body.

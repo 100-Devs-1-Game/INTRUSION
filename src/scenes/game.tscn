@@ -1359,4 +1359,5 @@ speed_scale = 0.03
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
+[connection signal="pressed" from="Handler/CanvasLayer/VBoxContainer/HBoxContainer2/X" to="." method="_on_x_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
