@@ -1,4 +1,4 @@
-[gd_scene load_steps=183 format=3 uid="uid://ctajckm8sdpo1"]
+[gd_scene load_steps=186 format=3 uid="uid://ctajckm8sdpo1"]
 
 [ext_resource type="Script" uid="uid://doye6tmvmc3sa" path="res://scenes/game.gd" id="1_vgiqa"]
 [ext_resource type="Texture2D" uid="uid://b1wle5of6wtfm" path="res://glitches/glitch_01_seq/010.webp" id="2_1uieh"]
@@ -463,6 +463,67 @@ width = 1701
 texture = SubResource("GradientTexture1D_6rcc6")
 expand_margin_right = 2048.0
 
+[sub_resource type="Animation" id="Animation_1fiuy"]
+resource_name = "SettingEnable"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control:process_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 0]
+}
+
+[sub_resource type="Animation" id="Animation_fikvi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control:process_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iwdqm"]
+_data = {
+&"RESET": SubResource("Animation_fikvi"),
+&"SettingEnable": SubResource("Animation_1fiuy")
+}
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvpfn"]
 bg_color = Color(0, 0, 0, 0.796078)
 
@@ -642,7 +703,7 @@ _data = {
 &"base": SubResource("Animation_nej56")
 }
 
-[node name="Game" type="Node2D" node_paths=PackedStringArray("time_label", "SETTINGSMENU")]
+[node name="Game" type="Node2D" node_paths=PackedStringArray("time_label", "SETTINGSANIM")]
 position = Vector2(575, 326)
 script = ExtResource("1_vgiqa")
 start_hour = 20
@@ -650,7 +711,7 @@ end_hour = 6
 duration = 1200.0
 time_label = NodePath("Handler/CanvasLayer/Timelbl")
 time_between_anomalies = 2.155
-SETTINGSMENU = NodePath("Handler/Settings")
+SETTINGSANIM = NodePath("Handler/Settings/Settings Animation")
 
 [node name="Glitch2" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.44375, 1.39167)
@@ -1301,6 +1362,7 @@ offset_left = 350.0
 offset_top = 10.0
 offset_right = 350.0
 offset_bottom = 10.0
+mouse_filter = 2
 script = ExtResource("138_x2ts8")
 MASTERAUDIO = NodePath("Control/VBoxContainer/Audio/VBoxContainer/HSlider")
 SFXAUDIO = NodePath("Control/VBoxContainer/Audio/VBoxContainer2/HSlider")
@@ -1308,6 +1370,8 @@ MUSICAUDIO = NodePath("Control/VBoxContainer/Audio/VBoxContainer3/HSlider")
 INGAME = true
 
 [node name="Control" type="Control" parent="Handler/Settings"]
+process_mode = 4
+modulate = Color(1, 1, 1, 0)
 anchors_preset = 0
 
 [node name="ColorRect" type="ColorRect" parent="Handler/Settings/Control"]
@@ -1426,6 +1490,11 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_l0ny2")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_l0ny2")
 text = "RETURN"
 
+[node name="Settings Animation" type="AnimationPlayer" parent="Handler/Settings"]
+libraries = {
+&"": SubResource("AnimationLibrary_iwdqm")
+}
+
 [node name="Camera2D" type="Camera2D" parent="Handler"]
 position = Vector2(0, 3)
 position_smoothing_speed = 1.0
@@ -1539,4 +1608,5 @@ autostart = true
 [connection signal="value_changed" from="Handler/Settings/Control/VBoxContainer/Audio/VBoxContainer/HSlider" to="Handler/Settings" method="_on_master_value_changed"]
 [connection signal="value_changed" from="Handler/Settings/Control/VBoxContainer/Audio/VBoxContainer2/HSlider" to="Handler/Settings" method="_on_sfx_value_changed"]
 [connection signal="value_changed" from="Handler/Settings/Control/VBoxContainer/Audio/VBoxContainer3/HSlider" to="Handler/Settings" method="_on_music_value_changed"]
+[connection signal="pressed" from="Handler/Settings/Control/VBoxContainer/Return" to="." method="_on_settings_return_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

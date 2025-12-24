@@ -9,15 +9,15 @@ extends Node2D
 @export var time_label: Label
 
 var current_time: float = 0.0
+var settings_enabled = false
 
 @export var time_between_anomalies: float = 16.0
-@export var SETTINGSMENU : Control
+@export var SETTINGSANIM : AnimationPlayer
 
 func _ready() -> void:
 	set_process(true)
 	update_label(0.0)
 	$Timer.wait_time = time_between_anomalies
-	SETTINGSMENU.visible = false
 	EventBus.gameover.connect(_game_over)
 
 func _process(delta: float) -> void:
@@ -113,12 +113,19 @@ func _on_x_pressed() -> void:
 
 
 func _on_settings_pressed() -> void:
-	print("bringing up settings menu")
-	SETTINGSMENU.visible = true
+	if !settings_enabled:
+		print("bringing up settings menu")
+		SETTINGSANIM.play("SettingEnable")
+		await SETTINGSANIM.animation_finished
+		settings_enabled = true
+	else :
+		_on_settings_return_pressed()
 	pass # Replace with function body.
 
 
 func _on_settings_return_pressed() -> void:
 	print("hiding settings menu")
-	SETTINGSMENU.visible = false
+	SETTINGSANIM.play_backwards("SettingEnable")
+	await SETTINGSANIM.animation_finished
+	settings_enabled = false
 	pass # Replace with function body.
