@@ -37,11 +37,11 @@ shader_parameter/block_max_frac = 0.4
 shader_parameter/noise_strength = 0.0
 shader_parameter/flash_amount = 0.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ia1n6"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6civk"]
 bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="Theme" id="Theme_hiwto"]
-VScrollBar/styles/grabber = SubResource("StyleBoxFlat_ia1n6")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_6civk")
 VScrollBar/styles/grabber_highlight = null
 VScrollBar/styles/grabber_pressed = null
 VScrollBar/styles/scroll = null
@@ -57,12 +57,12 @@ interpolation_color_space = 1
 offsets = PackedFloat32Array(0, 0.004)
 colors = PackedColorArray(0, 0, 0, 1, 0.968627, 0.054902, 0.313726, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_6civk"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6rcc6"]
 gradient = SubResource("Gradient_ygloa")
 width = 1701
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7af2g"]
-texture = SubResource("GradientTexture1D_6civk")
+texture = SubResource("GradientTexture1D_6rcc6")
 expand_margin_right = 2048.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wosw1"]

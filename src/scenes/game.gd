@@ -10,9 +10,10 @@ extends Node2D
 
 var current_time: float = 0.0
 var settings_enabled = false
+var logs_enabled = false
 
 @export var time_between_anomalies: float = 16.0
-@export var SETTINGSANIM : AnimationPlayer
+@export var MENUANIM : AnimationPlayer
 
 func _ready() -> void:
 	set_process(true)
@@ -113,10 +114,15 @@ func _on_x_pressed() -> void:
 
 
 func _on_settings_pressed() -> void:
-	if !settings_enabled:
+	if logs_enabled:
+		print("logs enabled already, hiding")
+		_on_logs_return_pressed()
+	if !settings_enabled :
+		if MENUANIM.is_playing():
+			await MENUANIM.animation_finished
 		print("bringing up settings menu")
-		SETTINGSANIM.play("SettingEnable")
-		await SETTINGSANIM.animation_finished
+		MENUANIM.play("SettingEnable")
+		await MENUANIM.animation_finished
 		settings_enabled = true
 	else :
 		_on_settings_return_pressed()
@@ -125,7 +131,30 @@ func _on_settings_pressed() -> void:
 
 func _on_settings_return_pressed() -> void:
 	print("hiding settings menu")
-	SETTINGSANIM.play_backwards("SettingEnable")
-	await SETTINGSANIM.animation_finished
+	MENUANIM.play_backwards("SettingEnable")
+	await MENUANIM.animation_finished
 	settings_enabled = false
+	pass # Replace with function body.
+
+
+func _on_logs_pressed() -> void:
+	if settings_enabled:
+		print("settings enabled already, hiding")
+		_on_settings_return_pressed()
+	if !logs_enabled :
+		if MENUANIM.is_playing():
+			await MENUANIM.animation_finished
+		MENUANIM.play("logsEnable")
+		await MENUANIM.animation_finished
+		logs_enabled = true
+	else :
+		_on_logs_return_pressed()
+		
+	pass # Replace with function body.
+
+
+func _on_logs_return_pressed() -> void:
+	MENUANIM.play_backwards("logsEnable")
+	await MENUANIM.animation_finished
+	logs_enabled = false
 	pass # Replace with function body.
