@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpq05pdle8m6m"]
+
+[ext_resource type="Texture2D" uid="uid://btasyod7ry55" path="res://assets/splash_screen/splash_screen.webp" id="1_n4g2v"]
+
+[node name="splash_screen" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_n4g2v")
