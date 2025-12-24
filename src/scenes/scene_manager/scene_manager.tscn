@@ -138,8 +138,7 @@ size_flags_vertical = 3
 mouse_filter = 2
 
 [node name="FadeLayer" type="CanvasLayer" parent="Control"]
-layer = 3
-visible = false
+layer = 4
 
 [node name="ColorRect" type="ColorRect" parent="Control/FadeLayer"]
 custom_minimum_size = Vector2(10, 10)
@@ -157,7 +156,7 @@ libraries = {
 }
 
 [node name="GameOverLayer" type="CanvasLayer" parent="Control"]
-layer = 2
+layer = 3
 
 [node name="ColorRect" type="ColorRect" parent="Control/GameOverLayer"]
 self_modulate = Color(1, 0, 0, 1)

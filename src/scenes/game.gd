@@ -11,11 +11,13 @@ extends Node2D
 var current_time: float = 0.0
 
 @export var time_between_anomalies: float = 16.0
+@export var SETTINGSMENU : Control
 
 func _ready() -> void:
 	set_process(true)
 	update_label(0.0)
 	$Timer.wait_time = time_between_anomalies
+	SETTINGSMENU.visible = false
 	EventBus.gameover.connect(_game_over)
 
 func _process(delta: float) -> void:
@@ -106,4 +108,17 @@ func _game_over() -> void:
 func _on_x_pressed() -> void:
 	EventBus.fade_screen.emit()
 	EventBus.load_menu.emit()
+	pass # Replace with function body.
+
+
+
+func _on_settings_pressed() -> void:
+	print("bringing up settings menu")
+	SETTINGSMENU.visible = true
+	pass # Replace with function body.
+
+
+func _on_settings_return_pressed() -> void:
+	print("hiding settings menu")
+	SETTINGSMENU.visible = false
 	pass # Replace with function body.

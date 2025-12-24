@@ -184,25 +184,25 @@ expand_margin_right = 2048.0
 offsets = PackedFloat32Array(1)
 colors = PackedColorArray(1, 1, 1, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_kcc3o"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6civk"]
 gradient = SubResource("Gradient_81wt4")
 width = 6
 height = 20
 
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_6rcc6"]
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_7af2g"]
 color = Color(0.964706, 0.054902, 0.313726, 1)
 thickness = 20
 
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_ah8jo"]
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_81wt4"]
 color = Color(0.148349, 0.000553296, 0.021177, 1)
 thickness = 20
 
 [sub_resource type="Theme" id="Theme_blk4q"]
-HSlider/icons/grabber = SubResource("GradientTexture2D_kcc3o")
-HSlider/icons/grabber_highlight = SubResource("GradientTexture2D_kcc3o")
-HSlider/styles/grabber_area = SubResource("StyleBoxLine_6rcc6")
-HSlider/styles/grabber_area_highlight = SubResource("StyleBoxLine_6rcc6")
-HSlider/styles/slider = SubResource("StyleBoxLine_ah8jo")
+HSlider/icons/grabber = SubResource("GradientTexture2D_6civk")
+HSlider/icons/grabber_highlight = SubResource("GradientTexture2D_6civk")
+HSlider/styles/grabber_area = SubResource("StyleBoxLine_7af2g")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxLine_7af2g")
+HSlider/styles/slider = SubResource("StyleBoxLine_81wt4")
 
 [sub_resource type="Gradient" id="Gradient_kcc3o"]
 interpolation_mode = 1
@@ -210,12 +210,12 @@ interpolation_color_space = 1
 offsets = PackedFloat32Array(0, 0.053)
 colors = PackedColorArray(0, 0, 0, 0, 0.968627, 0.054902, 0.313726, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_6rcc6"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_kcc3o"]
 gradient = SubResource("Gradient_kcc3o")
 width = 1701
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ah8jo"]
-texture = SubResource("GradientTexture1D_6rcc6")
+texture = SubResource("GradientTexture1D_kcc3o")
 expand_margin_right = 2048.0
 
 [sub_resource type="Animation" id="Animation_b3w7a"]
