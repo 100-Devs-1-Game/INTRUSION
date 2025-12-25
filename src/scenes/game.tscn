@@ -119,9 +119,9 @@
 [ext_resource type="Texture2D" uid="uid://b74luw8msm1iu" path="res://console/icons/lights_normal.png" id="117_gmgdt"]
 [ext_resource type="Texture2D" uid="uid://cy2vtxd54aata" path="res://console/icons/lights_pressed.png" id="118_36io8"]
 [ext_resource type="Texture2D" uid="uid://djrn3wj6p5lc8" path="res://console/icons/lights_hover.png" id="119_pcasu"]
-[ext_resource type="Texture2D" uid="uid://ch6jfb3i5u1pg" path="res://console/icons/doors_normal.png" id="120_khak0"]
-[ext_resource type="Texture2D" uid="uid://6w1i36fr8haf" path="res://console/icons/doors_pressed.png" id="121_sy3rc"]
-[ext_resource type="Texture2D" uid="uid://cd1tk783ifbo5" path="res://console/icons/doors_hover.png" id="122_1yrp2"]
+[ext_resource type="Texture2D" uid="uid://dyf3oga6h7vcf" path="res://console/icons/contain_normal.png" id="120_iwdqm"]
+[ext_resource type="Texture2D" uid="uid://n7kgkrgi3dm8" path="res://console/icons/contain_pressed.png" id="121_l0ny2"]
+[ext_resource type="Texture2D" uid="uid://bv5ad1rcw4lhy" path="res://console/icons/contain_hover.png" id="122_h1bth"]
 [ext_resource type="Texture2D" uid="uid://mdx1rcs7ee02" path="res://console/icons/fix_anomalies_normal.png" id="123_m0uyi"]
 [ext_resource type="Texture2D" uid="uid://dxa5layy5hj2r" path="res://console/icons/fix_anomalies_pressed.png" id="124_b20fr"]
 [ext_resource type="Texture2D" uid="uid://bmtthx8qtjd17" path="res://console/icons/fix_anomalies_hover.png" id="125_du2mt"]
@@ -1234,13 +1234,13 @@ texture_hover = ExtResource("119_pcasu")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Door" type="TextureButton" parent="Handler/CanvasLayer/VBoxContainer/HBoxContainer"]
+[node name="Contain" type="TextureButton" parent="Handler/CanvasLayer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(46, 46)
 layout_mode = 2
 focus_mode = 0
-texture_normal = ExtResource("120_khak0")
-texture_pressed = ExtResource("121_sy3rc")
-texture_hover = ExtResource("122_1yrp2")
+texture_normal = ExtResource("120_iwdqm")
+texture_pressed = ExtResource("121_l0ny2")
+texture_hover = ExtResource("122_h1bth")
 ignore_texture_size = true
 stretch_mode = 5
 

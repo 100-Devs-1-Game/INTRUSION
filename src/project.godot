@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Intrusion"
+config/name="INTRUSION"
+config/description="INTRUSION is a Fixed-Camera Psychological Horror / Systems Management game."
 run/main_scene="uid://bk4ir3a6rh5hy"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
