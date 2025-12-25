@@ -124,6 +124,7 @@ func _on_settings_pressed() -> void:
 		MENUANIM.play("SettingEnable")
 		await MENUANIM.animation_finished
 		settings_enabled = true
+		EventBus.disallow_zoom.emit()
 	else :
 		_on_settings_return_pressed()
 	pass # Replace with function body.
@@ -134,6 +135,7 @@ func _on_settings_return_pressed() -> void:
 	MENUANIM.play_backwards("SettingEnable")
 	await MENUANIM.animation_finished
 	settings_enabled = false
+	EventBus.allow_zoom.emit()
 	pass # Replace with function body.
 
 
@@ -147,6 +149,7 @@ func _on_logs_pressed() -> void:
 		MENUANIM.play("logsEnable")
 		await MENUANIM.animation_finished
 		logs_enabled = true
+		EventBus.disallow_zoom.emit()
 	else :
 		_on_logs_return_pressed()
 		
@@ -157,4 +160,5 @@ func _on_logs_return_pressed() -> void:
 	MENUANIM.play_backwards("logsEnable")
 	await MENUANIM.animation_finished
 	logs_enabled = false
+	EventBus.allow_zoom.emit()
 	pass # Replace with function body.

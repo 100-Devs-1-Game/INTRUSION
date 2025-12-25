@@ -22,3 +22,6 @@ signal update_log_info(title: String, desc: String, date: String)
 signal load_game
 signal load_menu
 signal fade_screen
+signal print_threat
+signal allow_zoom
+signal disallow_zoom

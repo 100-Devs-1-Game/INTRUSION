@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://dom1flmyyn4sq"]
 
-[ext_resource type="Texture2D" uid="uid://cpex5bfhaqxcw" path="res://seqs/room_01/ROOM_01_BASE_DARK_720.webp" id="1_o2vl8"]
-[ext_resource type="SpriteFrames" uid="uid://ba36wtx57wel3" path="res://seqs/room_01/room_01_major_event_01_seq/room_01_major_event_01_seq.tres" id="2_wh36n"]
-[ext_resource type="SpriteFrames" uid="uid://bl1wdodoff3q8" path="res://seqs/room_01/room_01_major_event_02_seq/room_01_major_event_02_seq.tres" id="3_wh36n"]
-[ext_resource type="SpriteFrames" uid="uid://bddqu8g3tra2f" path="res://seqs/room_01/room_01_major_event_03_seq/room_01_major_event_03_seq.tres" id="4_sqvx1"]
-[ext_resource type="SpriteFrames" uid="uid://dn6gykun42uia" path="res://seqs/room_01/room_01_major_event_04_seq/room_01_major_event_04_seq.tres" id="5_uuxo6"]
-[ext_resource type="SpriteFrames" uid="uid://grjknkk7fnh4" path="res://seqs/room_01/room_01_major_event_05_seq/room_01_major_event_05_seq.tres" id="6_k1g5k"]
+[ext_resource type="Texture2D" uid="uid://cpex5bfhaqxcw" path="res://assets/seqs/room_01/ROOM_01_BASE_DARK_720.webp" id="1_o2vl8"]
+[ext_resource type="SpriteFrames" uid="uid://ba36wtx57wel3" path="res://assets/seqs/room_01/major events/room_01_major_event_01_seq/room_01_major_event_01_seq.tres" id="2_wh36n"]
+[ext_resource type="SpriteFrames" uid="uid://bl1wdodoff3q8" path="res://assets/seqs/room_01/major events/room_01_major_event_02_seq/room_01_major_event_02_seq.tres" id="3_wh36n"]
+[ext_resource type="SpriteFrames" uid="uid://bddqu8g3tra2f" path="res://assets/seqs/room_01/major events/room_01_major_event_03_seq/room_01_major_event_03_seq.tres" id="4_sqvx1"]
+[ext_resource type="SpriteFrames" uid="uid://dn6gykun42uia" path="res://assets/seqs/room_01/major events/room_01_major_event_04_seq/room_01_major_event_04_seq.tres" id="5_uuxo6"]
+[ext_resource type="SpriteFrames" uid="uid://grjknkk7fnh4" path="res://assets/seqs/room_01/major events/room_01_major_event_05_seq/room_01_major_event_05_seq.tres" id="6_k1g5k"]
 
 [node name="Major Events" type="Node2D"]
 

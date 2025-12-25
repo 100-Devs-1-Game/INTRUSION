@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var anomaly_room_id: int = 1
-@export var anomaly_severity: float = 1.5
+@export var anomaly_severity: float = 1.1
 @export var anomaly_time_pause: float = 12.0
 @export var anomaly_animation_name: String = "default"
 @export var replay_animation: bool = false
@@ -55,14 +55,17 @@ func activate_anomaly() -> void:
 
 
 func fix_anomaly() -> void:
+	EventBus.print_threat.emit()
 	anomaly_active = false
 	EventBus.energy_spent.emit(1.5)
+	EventBus.anomaly_fixed.emit()
 	if sheet:
 		anim.play_backwards(anomaly_animation_name)
 		if replay_animation:
 			anim.speed_scale = 3.0
 			anim.sprite_frames.set_animation_loop(anomaly_animation_name, false)
 	update_visual(anomaly_room_id, is_lit)
+	EventBus.print_threat.emit()
 
 
 func is_active() -> bool:

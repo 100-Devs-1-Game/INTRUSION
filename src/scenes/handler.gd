@@ -46,6 +46,7 @@ var threat_reduction: float = 3.4
 var intensity: float = 0.0
 var glitcher: ShaderMaterial
 var cammat
+var allow_zoom = true
 
 func _ready() -> void:
 	light_button.pressed.connect(func(): current_room.toggle_light())
@@ -56,6 +57,9 @@ func _ready() -> void:
 	EventBus.threat_level_increased.connect(func(increase): threat_level += increase)
 	EventBus.energy_spent.connect(func(amount): current_energy -= amount)
 	EventBus.display_text.connect(func(obj): $CanvasLayer/ObjectDetector.text = "Object: " + obj)
+	EventBus.print_threat.connect(_print_threat_level)
+	EventBus.allow_zoom.connect(func(): allow_zoom = true)
+	EventBus.disallow_zoom.connect(func(): allow_zoom = false)
 	room_cap = rooms.size() - 1
 	if camera:
 		camera_zoom = camera.zoom
@@ -78,11 +82,11 @@ func _process(delta: float) -> void:
 		change_room(current_camera)
 	elif Input.is_action_just_pressed("lights"):
 		current_room.toggle_light()
-
-	if Input.is_action_just_pressed("zoom in"):
-		zoom_in()
-	elif Input.is_action_just_pressed("zoom out"):
-		zoom_out()
+	if allow_zoom:
+		if Input.is_action_just_pressed("zoom in"):
+			zoom_in()
+		elif Input.is_action_just_pressed("zoom out"):
+			zoom_out()
 
 	if Input.is_action_pressed("up"):
 		if !top_limit:
@@ -232,3 +236,8 @@ func update_energy_use(_room = 0, _state = false) -> void:
 				current_usage += 1
 
 	print("Current usage is: ", str(current_usage))
+
+func _print_threat_level() -> void:
+	print("threat level: " + str(threat_level))
+
+	
