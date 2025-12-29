@@ -2052,6 +2052,7 @@ libraries = {
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_6civk")
 autoplay = true
+bus = &"Music"
 
 [connection signal="value_changed" from="CanvasLayer/UICont/Settings/VBoxContainer/Audio/VBoxContainer/HSlider" to="CanvasLayer/UICont/Settings" method="_on_master_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/UICont/Settings/VBoxContainer/Audio/VBoxContainer2/HSlider" to="CanvasLayer/UICont/Settings" method="_on_sfx_value_changed"]
