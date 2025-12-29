@@ -16,8 +16,7 @@ extends Control
 #exit logs
 @export var exit_logs: BaseButton
 
-#exit settings
-@export var exit_settings: BaseButton
+
 
 func _ready() -> void:
 	_connect_buttons()
@@ -45,9 +44,6 @@ func _connect_buttons() -> void:
 
 	if exit_logs:
 		exit_logs.pressed.connect(func(): $CanvasLayer/UI.play_backwards("logs"); change_menu())
-
-	if exit_settings:
-		exit_settings.pressed.connect(func(): $CanvasLayer/UI.play_backwards("settings"); change_menu())
 
 
 func change_menu() -> void:
@@ -96,3 +92,9 @@ func plh_load_bar() -> void:
 		await get_tree().create_timer(randf_range(0.2, 0.5)).timeout
 
 		anim.speed_scale = 0.6
+
+
+func _on_exit_settings():
+	$CanvasLayer/UI.play_backwards("settings")
+	change_menu()
+	

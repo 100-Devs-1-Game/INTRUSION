@@ -1,4 +1,4 @@
-[gd_scene load_steps=197 format=3 uid="uid://ctajckm8sdpo1"]
+[gd_scene load_steps=187 format=3 uid="uid://ctajckm8sdpo1"]
 
 [ext_resource type="Script" uid="uid://doye6tmvmc3sa" path="res://scenes/game.gd" id="1_vgiqa"]
 [ext_resource type="Texture2D" uid="uid://b1wle5of6wtfm" path="res://glitches/glitch_01_seq/010.webp" id="2_1uieh"]
@@ -137,9 +137,8 @@
 [ext_resource type="FontFile" uid="uid://cgignmw1c7ehh" path="res://fonts/Helvetica-Bold.ttf" id="135_y8e17"]
 [ext_resource type="Texture2D" uid="uid://f6c5c2i6hbfn" path="res://console/scroller.png" id="136_4re6s"]
 [ext_resource type="Shader" uid="uid://dx8yovavok00g" path="res://scenes/glitch_alt.gdshader" id="137_njubb"]
+[ext_resource type="PackedScene" uid="uid://blaqahyclcc3h" path="res://scenes/settings.tscn" id="138_fikvi"]
 [ext_resource type="Script" uid="uid://cjcgn0oq1hkhl" path="res://sandbox/dev.gd" id="138_gm21d"]
-[ext_resource type="Script" uid="uid://6p0l8g2qfmmy" path="res://scenes/settings.gd" id="138_x2ts8"]
-[ext_resource type="FontFile" uid="uid://c4bq2x43il65b" path="res://fonts/Helvetica.ttf" id="139_1fiuy"]
 [ext_resource type="Script" uid="uid://blpl5u1c27o6q" path="res://scenes/logs.gd" id="140_l0ny2"]
 [ext_resource type="PackedScene" uid="uid://des2m7b07xydb" path="res://components/ui/logs/log_button.tscn" id="142_6cwij"]
 [ext_resource type="FontFile" uid="uid://b1coy664nqqup" path="res://fonts/exp fonts/the-mark-font/TheMark-m2VZV.ttf" id="143_bqsge"]
@@ -425,46 +424,6 @@ shader_parameter/u_flicker_speed = 10.0
 shader_parameter/u_flicker_intensity = 0.609
 shader_parameter/u_burst_rate = 1.842
 shader_parameter/u_burst_strength = 1.258
-
-[sub_resource type="Gradient" id="Gradient_fikvi"]
-offsets = PackedFloat32Array(1)
-colors = PackedColorArray(1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_kcc3o"]
-gradient = SubResource("Gradient_fikvi")
-width = 6
-height = 20
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_6rcc6"]
-color = Color(0.964706, 0.054902, 0.313726, 1)
-thickness = 20
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_ah8jo"]
-color = Color(0.148349, 0.000553296, 0.021177, 1)
-thickness = 20
-
-[sub_resource type="Theme" id="Theme_iwdqm"]
-HSlider/icons/grabber = SubResource("GradientTexture2D_kcc3o")
-HSlider/icons/grabber_highlight = SubResource("GradientTexture2D_kcc3o")
-HSlider/styles/grabber_area = SubResource("StyleBoxLine_6rcc6")
-HSlider/styles/grabber_area_highlight = SubResource("StyleBoxLine_6rcc6")
-HSlider/styles/slider = SubResource("StyleBoxLine_ah8jo")
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l0ny2"]
-
-[sub_resource type="Gradient" id="Gradient_h1bth"]
-interpolation_mode = 1
-interpolation_color_space = 1
-offsets = PackedFloat32Array(0, 0.053)
-colors = PackedColorArray(0, 0, 0, 0, 0.968627, 0.054902, 0.313726, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_6rcc6"]
-gradient = SubResource("Gradient_h1bth")
-width = 1701
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6cwij"]
-texture = SubResource("GradientTexture1D_6rcc6")
-expand_margin_right = 2048.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ia1n6"]
 bg_color = Color(1, 1, 1, 1)
@@ -1439,140 +1398,12 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Settings" type="Control" parent="Handler" node_paths=PackedStringArray("MASTERAUDIO", "SFXAUDIO", "MUSICAUDIO")]
-layout_mode = 3
-anchors_preset = 0
+[node name="Settings" parent="Handler" instance=ExtResource("138_fikvi")]
 offset_left = 350.0
-offset_top = 10.0
+offset_top = 0.0
 offset_right = 350.0
-offset_bottom = 10.0
-mouse_filter = 2
-script = ExtResource("138_x2ts8")
-MASTERAUDIO = NodePath("Control/VBoxContainer/Audio/VBoxContainer/HSlider")
-SFXAUDIO = NodePath("Control/VBoxContainer/Audio/VBoxContainer2/HSlider")
-MUSICAUDIO = NodePath("Control/VBoxContainer/Audio/VBoxContainer3/HSlider")
+offset_bottom = 0.0
 INGAME = true
-
-[node name="Control" type="Control" parent="Handler/Settings"]
-process_mode = 4
-modulate = Color(1, 1, 1, 0)
-anchors_preset = 0
-
-[node name="ColorRect" type="ColorRect" parent="Handler/Settings/Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -174.5
-offset_top = -231.0
-offset_right = 134.5
-offset_bottom = 191.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Handler/Settings/Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -157.5
-offset_top = -217.0
-offset_right = 117.5
-offset_bottom = 177.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 21
-
-[node name="Label" type="Label" parent="Handler/Settings/Control/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("135_y8e17")
-theme_override_font_sizes/font_size = 55
-text = "SETTINGS"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Audio" type="VBoxContainer" parent="Handler/Settings/Control/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 12
-
-[node name="A" type="Label" parent="Handler/Settings/Control/VBoxContainer/Audio"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.964706, 0.054902, 0.313726, 1)
-theme_override_fonts/font = ExtResource("135_y8e17")
-theme_override_font_sizes/font_size = 36
-text = "Audio"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Handler/Settings/Control/VBoxContainer/Audio"]
-layout_mode = 2
-theme_override_constants/separation = 19
-
-[node name="Master" type="Label" parent="Handler/Settings/Control/VBoxContainer/Audio/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("139_1fiuy")
-theme_override_font_sizes/font_size = 24
-text = "Master Audio"
-vertical_alignment = 1
-
-[node name="HSlider" type="HSlider" parent="Handler/Settings/Control/VBoxContainer/Audio/VBoxContainer"]
-layout_mode = 2
-focus_mode = 0
-theme = SubResource("Theme_iwdqm")
-value = 13.0
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="Handler/Settings/Control/VBoxContainer/Audio"]
-layout_mode = 2
-theme_override_constants/separation = 19
-
-[node name="SFX" type="Label" parent="Handler/Settings/Control/VBoxContainer/Audio/VBoxContainer2"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("139_1fiuy")
-theme_override_font_sizes/font_size = 24
-text = "Sound Effects"
-vertical_alignment = 1
-
-[node name="HSlider" type="HSlider" parent="Handler/Settings/Control/VBoxContainer/Audio/VBoxContainer2"]
-layout_mode = 2
-focus_mode = 0
-theme = SubResource("Theme_iwdqm")
-value = 13.0
-
-[node name="VBoxContainer3" type="VBoxContainer" parent="Handler/Settings/Control/VBoxContainer/Audio"]
-layout_mode = 2
-theme_override_constants/separation = 19
-
-[node name="Music" type="Label" parent="Handler/Settings/Control/VBoxContainer/Audio/VBoxContainer3"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("139_1fiuy")
-theme_override_font_sizes/font_size = 24
-text = "Music"
-vertical_alignment = 1
-
-[node name="HSlider" type="HSlider" parent="Handler/Settings/Control/VBoxContainer/Audio/VBoxContainer3"]
-layout_mode = 2
-focus_mode = 0
-theme = SubResource("Theme_iwdqm")
-value = 13.0
-
-[node name="Return" type="Button" parent="Handler/Settings/Control/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("135_y8e17")
-theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxEmpty_l0ny2")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_l0ny2")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_l0ny2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_6cwij")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_l0ny2")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_l0ny2")
-text = "RETURN"
 
 [node name="LogsContainer" type="Control" parent="Handler"]
 modulate = Color(1, 1, 1, 0)
@@ -2107,7 +1938,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_wvj0x")
 text = "RETURN"
 
 [node name="UI Animation" type="AnimationPlayer" parent="Handler"]
-root_node = NodePath("../Settings")
+root_node = NodePath("")
 libraries = {
 &"": SubResource("AnimationLibrary_iwdqm")
 }
@@ -2223,9 +2054,5 @@ autostart = true
 [connection signal="pressed" from="Handler/CanvasLayer/VBoxContainer/HBoxContainer2/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Handler/CanvasLayer/VBoxContainer/HBoxContainer2/Logs" to="." method="_on_logs_pressed"]
 [connection signal="pressed" from="Handler/CanvasLayer/VBoxContainer/HBoxContainer2/X" to="." method="_on_x_pressed"]
-[connection signal="value_changed" from="Handler/Settings/Control/VBoxContainer/Audio/VBoxContainer/HSlider" to="Handler/Settings" method="_on_master_value_changed"]
-[connection signal="value_changed" from="Handler/Settings/Control/VBoxContainer/Audio/VBoxContainer2/HSlider" to="Handler/Settings" method="_on_sfx_value_changed"]
-[connection signal="value_changed" from="Handler/Settings/Control/VBoxContainer/Audio/VBoxContainer3/HSlider" to="Handler/Settings" method="_on_music_value_changed"]
-[connection signal="pressed" from="Handler/Settings/Control/VBoxContainer/Return" to="." method="_on_settings_return_pressed"]
 [connection signal="pressed" from="Handler/LogsContainer/Logs/Return" to="." method="_on_logs_return_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
