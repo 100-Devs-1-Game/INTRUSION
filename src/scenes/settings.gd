@@ -1,4 +1,4 @@
-class_name settings extends Control
+class_name Settings extends Control
 
 signal return_pressed
 

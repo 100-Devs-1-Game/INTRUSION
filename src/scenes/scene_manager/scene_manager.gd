@@ -1,4 +1,4 @@
-class_name scene_manager extends Node2D
+class_name Scene_manager extends Node2D
 
 #THIS SHOULD BE THE FIRST SCENE LOADED 
 
