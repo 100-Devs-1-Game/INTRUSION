@@ -22,7 +22,7 @@ func update_log(title: String, desc: String, date: String) -> void:
 		$IntLog.visible = false
 		log_info.visible = true
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var t = Time.get_time_dict_from_system(false)
 	var hour_24 = t["hour"]
 	var am_pm = "AM"

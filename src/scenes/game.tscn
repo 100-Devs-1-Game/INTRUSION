@@ -747,7 +747,6 @@ _data = {
 }
 
 [node name="Game" type="Node2D" node_paths=PackedStringArray("time_label", "MENUANIM")]
-position = Vector2(575, 326)
 script = ExtResource("1_vgiqa")
 start_hour = 20
 end_hour = 6
@@ -757,6 +756,7 @@ time_between_anomalies = 2.155
 MENUANIM = NodePath("Handler/UI Animation")
 
 [node name="Glitch2" type="AnimatedSprite2D" parent="."]
+position = Vector2(575, 326)
 scale = Vector2(1.44375, 1.39167)
 sprite_frames = SubResource("SpriteFrames_6cwij")
 animation = &"glitch_4"
@@ -764,6 +764,7 @@ frame = 8
 frame_progress = 1.0
 
 [node name="MASTER" type="Node2D" parent="." node_paths=PackedStringArray("light_ver")]
+position = Vector2(575, 326)
 script = ExtResource("53_7mokv")
 light_ver = NodePath("Base/Room01BaseLight720")
 
@@ -837,6 +838,7 @@ shape = SubResource("RectangleShape2D_lddog")
 
 [node name="HALLWAY" type="Node2D" parent="." node_paths=PackedStringArray("light_ver")]
 visible = false
+position = Vector2(575, 326)
 script = ExtResource("53_7mokv")
 room_id = 2
 light_ver = NodePath("Base/Room02BaseLight720")
@@ -915,6 +917,7 @@ shape = SubResource("RectangleShape2D_ghitk")
 
 [node name="MUDROOM" type="Node2D" parent="." node_paths=PackedStringArray("light_ver")]
 visible = false
+position = Vector2(575, 326)
 script = ExtResource("53_7mokv")
 room_id = 3
 light_ver = NodePath("Base/Room03Base720")
@@ -994,6 +997,7 @@ shape = SubResource("RectangleShape2D_7kwaa")
 
 [node name="ATTIC" type="Node2D" parent="."]
 visible = false
+position = Vector2(575, 326)
 script = ExtResource("53_7mokv")
 room_id = 4
 disable_light = true
@@ -1048,10 +1052,10 @@ shape = SubResource("CircleShape2D_rundi")
 [node name="Overlay" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_kvpfn")
 custom_minimum_size = Vector2(1063.27, 3.8)
-offset_left = -671.0
-offset_top = -264.0
-offset_right = 392.28
-offset_bottom = 265.0
+offset_left = -96.0
+offset_top = 62.0
+offset_right = 967.28
+offset_bottom = 591.0
 scale = Vector2(1.29518, 1.13717)
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
@@ -1059,14 +1063,15 @@ metadata/_edit_use_anchors_ = true
 [node name="Static" type="ColorRect" parent="."]
 visible = false
 material = SubResource("ShaderMaterial_dinhu")
-offset_left = -531.0
-offset_top = -237.0
-offset_right = 531.0
-offset_bottom = 292.0
+offset_left = 44.0
+offset_top = 89.0
+offset_right = 1106.0
+offset_bottom = 618.0
 color = Color(1, 1, 1, 0)
 
 [node name="Glitch" type="AnimatedSprite2D" parent="."]
 visible = false
+position = Vector2(575, 326)
 scale = Vector2(0.834375, 0.677778)
 sprite_frames = SubResource("SpriteFrames_6cwij")
 animation = &"glitch_4"
@@ -1074,6 +1079,7 @@ frame = 8
 frame_progress = 1.0
 
 [node name="Handler" type="Node2D" parent="." node_paths=PackedStringArray("rooms", "camera", "light_button", "next_button", "prev_button", "stat_overlay", "animator", "current_room")]
+position = Vector2(575, 326)
 script = ExtResource("105_r2em3")
 rooms = [NodePath("../MASTER"), NodePath("../HALLWAY"), NodePath("../MUDROOM"), NodePath("../ATTIC")]
 min_zoom = Vector2(1, 1)

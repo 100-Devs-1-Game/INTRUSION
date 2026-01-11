@@ -20,7 +20,7 @@ func _ready() -> void:
 	else:
 		text = "  " + "[REDACTED]"
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	current_y_size = lerpf(current_y_size, target_y_size, 0.3)
 	custom_minimum_size.y = current_y_size
 
@@ -37,8 +37,8 @@ func _on_pressed() -> void:
 		EventBus.update_log_info.emit(log_title, log_desc, log_date)
 	else:
 		var redacted = ""
-		for char in log_desc:
-			if char == " ":
+		for _char in log_desc:
+			if _char == " ":
 				redacted += " "
 			else:
 				redacted += "X"

@@ -15,10 +15,10 @@ func _ready() -> void:
 
 
 func setGlobals() -> void:
-	Global.master_audio_level = MASTERAUDIO.value
-	Global.sound_effects_level = SFXAUDIO.value
-	Global.music_level = MUSICAUDIO.value
-	Global.fullscreen = FULLSCREEN.button_pressed
+	Global.master_audio_level = int(MASTERAUDIO.value)
+	Global.sound_effects_level = int(SFXAUDIO.value)
+	Global.music_level = int(MUSICAUDIO.value)
+	Global.fullscreen = int(FULLSCREEN.button_pressed)
 
 
 func setLocals() -> void:
@@ -30,17 +30,17 @@ func setLocals() -> void:
 
 func _on_master_value_changed(value: float) -> void:
 	print("changing master audio level to: " + str(value))
-	Global.master_audio_level = value
+	Global.master_audio_level = int(value)
 
 
 func _on_sfx_value_changed(value: float) -> void:
 	print("changing sfx audio level to: " + str(value))
-	Global.sound_effects_level = value
+	Global.sound_effects_level = int(value)
 
 
 func _on_music_value_changed(value: float) -> void:
 	print("changing music audio level to: " + str(value))
-	Global.music_level = value
+	Global.music_level = int(value)
 
 
 func _on_fullscreen_check_box_toggled(toggled_on: bool) -> void:

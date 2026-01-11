@@ -81,9 +81,9 @@ func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 				fix_anomaly()
 
 
-func _on_mouse_shape_entered(shape_idx: int) -> void:
+func _on_mouse_shape_entered(_shape_idx: int) -> void:
 	EventBus.display_text.emit("Object: " + name)
 
 
-func _on_mouse_shape_exited(shape_idx: int) -> void:
+func _on_mouse_shape_exited(_shape_idx: int) -> void:
 	EventBus.display_text.emit("")
