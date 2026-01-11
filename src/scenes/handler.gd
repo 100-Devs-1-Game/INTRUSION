@@ -42,6 +42,7 @@ var current_usage: int = 0
 var threat_level: float = 0.0
 var max_threat_level: float = 100.0
 var threat_reduction: float = 3.4
+var is_game_over: bool = false
 
 var intensity: float = 0.0
 var glitcher: ShaderMaterial
@@ -192,7 +193,8 @@ func update_ui() -> void:
 	$CanvasLayer/ThreatBar.max_value = max_threat_level
 	$CanvasLayer/ThreatBar.value = lerpf($CanvasLayer/ThreatBar.value, threat_level, 0.005)
 
-	if threat_level >= max_threat_level:
+	if threat_level >= max_threat_level and not is_game_over:
+		is_game_over = true
 		print("Game over")
 		EventBus.gameover.emit()
 
